@@ -5,7 +5,8 @@ using namespace std;
 
 class Menu
 {
-    public:
+public:
+    void chooseMenu();
     void printMenu();
     void switchMenu();
 };
