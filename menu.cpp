@@ -1,7 +1,7 @@
 #pragma once 
 #include <iostream>
 #include "menu.hpp"
-#include "userInput.hpp"
+#include "userInput.cpp"
 
 using namespace std;
 
@@ -18,15 +18,21 @@ void Menu::chooseMenu()
     switch(choice.input)
     {
         case 'a':
-
+            printAccountMenu();
+            break;
         case 'l':
-        
-    };
+            printLibraryMenu();
+            break;
+    };  
 }
 
-void Menu::printMenu()
+void Menu::printLibraryMenu()
 {
-
+    cout << "Library Menu" << endl;
 }
 
+void Menu::printAccountMenu()
+{
+    cout << "Account Menu" << endl;
+}
 

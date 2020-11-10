@@ -7,6 +7,8 @@ class Menu
 {
 public:
     void chooseMenu();
-    void printMenu();
-    void switchMenu();
+    void printLibraryMenu();
+    void printAccountMenu();
+    void switchLibraryMenu();
+    void switchAccountMenu();
 };
