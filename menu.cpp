@@ -28,7 +28,7 @@ void Menu::chooseMenu()
 
 void Menu::printLibraryMenu()
 {
-    cout << "Library Menu" << endl;
+    cout << "Library Menu" << endl; //tu sobie wpisujesz co ma wyświetlić się w twoim menu
 }
 
 void Menu::printAccountMenu()
@@ -36,12 +36,12 @@ void Menu::printAccountMenu()
     cout << "Account Menu" << endl;
 }
 
-void Menu::switchLibraryMenu()
+void Menu::switchLibraryMenu()  //tu se wpisujesz switch do metod operujących na twojej liście
 {
 
 }
 
 void Menu::switchAccountMenu()
 {
-    
+
 }
