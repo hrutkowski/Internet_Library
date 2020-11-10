@@ -21,7 +21,7 @@ void Menu::chooseMenu()
             printAccountMenu();
             break;
         case 'l':
-            printLibraryMenu();
+            printLibraryMenu(); 
             break;
     };  
 }
@@ -36,3 +36,12 @@ void Menu::printAccountMenu()
     cout << "Account Menu" << endl;
 }
 
+void Menu::switchLibraryMenu()
+{
+
+}
+
+void Menu::switchAccountMenu()
+{
+    
+}
