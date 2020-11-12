@@ -12,5 +12,7 @@ class Book
     public:
         Book();  //c-tor
         Book(string b_name, string b_author, bool b_taken); // overloaded c-tor
+        void reservation();
+        void cancel_reservation();
         ~Book()=default; //d-tor
 };
