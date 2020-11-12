@@ -16,3 +16,17 @@ Book::Book(string b_name, string b_author, bool b_taken)
     taken = b_taken;
 }
 
+void Book::reservation()
+{
+    if(taken)
+    {
+        cout << endl << "This book is taken. We are so sorry!" << endl;
+    }
+    else 
+    {
+       taken = true;
+       cout << endl << "You have successfully reserved a book!";
+    }
+    
+}
+
