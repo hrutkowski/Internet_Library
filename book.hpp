@@ -5,11 +5,12 @@ using namespace std;
 
 class Book
 {
-    string name;
-    string author;
-    bool taken;
+    string name; //book name
+    string author; //book's author
+    bool taken; //state
     
     public:
-        Book();
-        ~Book()=default;
+        Book();  //c-tor
+        Book(string b_name, string b_author, bool b_taken); // overloaded c-tor
+        ~Book()=default; //d-tor
 };
