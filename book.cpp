@@ -25,7 +25,20 @@ void Book::reservation()
     else 
     {
        taken = true;
-       cout << endl << "You have successfully reserved a book!";
+       cout << endl << "You have successfully reserved a book!" << endl;
+    }
+}
+
+void Book::cancel_reservation()
+{
+    if(taken)
+    {
+        taken = false;
+        cout << endl << "You have successfully canceled reservation!" << endl;
+    }
+    else
+    {
+        cout << "This book was not reserved!";
     }
     
 }
