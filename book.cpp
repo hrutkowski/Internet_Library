@@ -4,3 +4,8 @@
 
 using namespace std;
 
+Book::Book()
+{
+    taken = false;
+}
+
