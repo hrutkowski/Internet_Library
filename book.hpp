@@ -7,8 +7,9 @@ class Book
 {
     string name;
     string author;
+    bool taken;
     
     public:
         Book();
-        ~Book();
+        ~Book()=default;
 };
