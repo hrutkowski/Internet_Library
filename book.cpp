@@ -38,13 +38,34 @@ void Book::cancel_reservation()
     }
     else
     {
-        cout << "This book was not reserved!";
+        cout << "This book was not reserved!" << endl;
     } 
 }
 
 void Book::book_status()
 {
-    if(taken) cout << "This book is taken!";
-    else cout<<"THis book is available for reservation!";
+    if(taken) cout << "This book is taken!" << endl;
+    else cout<<"THis book is available for reservation!" << endl;
 }
 
+/*                  SMALL TEST OF THE FUNCTIONS
+int main(void)
+{
+    Book book1;
+
+    book1.reservation();
+    cout << "COMMIT: Information about reservation" << endl;
+    cout << "=============================" << endl;
+    book1.book_status();
+    cout << "COMMIT: Should be reserved" << endl;
+    cout << "=============================" << endl;
+    book1.reservation();
+    cout << "COMMIT: Should not be able to reserve" << endl;
+    cout << "=============================" << endl;
+    book1.cancel_reservation();
+    cout << "COMMIT: Informtion about the cancel of reservation" << endl;
+    cout << "=============================" << endl;
+    book1.book_status();
+    cout << "COMMIT: Should be able to be reserved" << endl;
+}
+*/
