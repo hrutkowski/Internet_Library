@@ -20,7 +20,7 @@ void Book::reservation()
 {
     if(taken)
     {
-        cout << endl << "This book is taken. We are so sorry!" << endl;
+        cout << endl << "This book is already taken. We are so sorry!" << endl;
     }
     else 
     {
@@ -39,7 +39,12 @@ void Book::cancel_reservation()
     else
     {
         cout << "This book was not reserved!";
-    }
-    
+    } 
+}
+
+void Book::book_status()
+{
+    if(taken) cout << "This book is taken!";
+    else cout<<"THis book is available for reservation!";
 }
 
