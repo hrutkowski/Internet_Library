@@ -9,9 +9,9 @@ Book::Book()
     taken = false;
 }
 
-Book::Book(string b_name, string b_author, bool b_taken)
+Book::Book(string b_title, string b_author, bool b_taken)
 {
-    name = b_name;
+    title = b_title;
     author = b_author;
     taken = b_taken;
 }
@@ -48,7 +48,7 @@ void Book::book_status()
     else cout<<"THis book is available for reservation!" << endl;
 }
 
-/*                  SMALL TEST OF THE FUNCTIONS
+                 //SMALL TEST OF THE FUNCTIONS
 int main(void)
 {
     Book book1;
@@ -68,4 +68,4 @@ int main(void)
     book1.book_status();
     cout << "COMMIT: Should be able to be reserved" << endl;
 }
-*/
+
