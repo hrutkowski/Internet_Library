@@ -8,13 +8,15 @@ class Book
     string title; //book name
     string author; //book's author
     bool taken; //state
+    Book* nextBook;
     
     public:
         Book();  //c-tor
-        Book(string b_title, string b_author, bool b_taken); // overloaded c-tor
-        void reservation();
-        void cancel_reservation();
-        void book_status();
+        Book(string title, string author);
+        string return_title(string title);
+        string return_author(string author);
+        bool return_taken(bool taken);
+        Book* return_nextBook(Book* nextBook);
         ~Book()=default; //d-tor
 
 };
