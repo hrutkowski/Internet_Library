@@ -8,6 +8,7 @@ using namespace std;
 void Menu::chooseMenu()
 {
     UserInput choice;
+    AccountList List;
 
     cout<<"Welcome in our amazing library"<<endl;
     cout<<"l - go to library menu"<<endl;
@@ -18,7 +19,11 @@ void Menu::chooseMenu()
     switch(choice.input)
     {
         case 'a':
+            for(;;)
+            {
             printAccountMenu();
+            switchAccountMenu(List);
+            };
             break;
         case 'l':
             printLibraryMenu(); 
@@ -34,7 +39,7 @@ void Menu::printLibraryMenu()
 void Menu::printAccountMenu()
 {
     cout << "Account Menu" << endl;
-    cout << "c - Creat a new account" << endl;
+    cout << "c - Create a new account" << endl;
     cout << "r - Remove and existing account" << endl;
     cout << "e - Edit an existing account" << endl;
 };
@@ -53,12 +58,13 @@ void Menu::switchAccountMenu(AccountList &accountList)
 
     switch(choice.input)
     {
-        case 'a':
+        case 'c':
             cout << "Name?" << endl;
             cin >> buffer1;
             cout << "Password?" << endl;
             cin >> buffer2;
             accountList.createAccount(buffer1, buffer2);
+            cout << "Account created!" << endl;
             break;
         case 'r':
             cout << "Name?" << endl;
@@ -69,7 +75,11 @@ void Menu::switchAccountMenu(AccountList &accountList)
             break;
         case 'e':
             cout << "Name?" << endl;
+            cin >> buffer1;
             accountList.editAccount(buffer1);
+            break;
+        case 'q':
+            exit(0);
             break;
     };  
 }
