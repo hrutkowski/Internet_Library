@@ -3,12 +3,14 @@
 #include "menu.hpp"
 #include "userInput.cpp"
 
+
 using namespace std;
 
 void Menu::chooseMenu()
 {
     UserInput choice;
     AccountList List;
+    BookList Books;
 
     cout<<"Welcome in our amazing library"<<endl;
     cout<<"l - go to library menu"<<endl;
@@ -26,14 +28,22 @@ void Menu::chooseMenu()
             };
             break;
         case 'l':
-            printLibraryMenu(); 
+            while(1)
+            {
+            printLibraryMenu();
+            switchLibraryMenu(Books);
+            }
             break;
     };  
 }
 
 void Menu::printLibraryMenu()
 {
-    cout << "Library Menu" << endl; //tu sobie wpisujesz co ma wyświetlić się w twoim menu
+    cout << "Library Menu" << endl;
+    cout << "a - Search for a book by author" << endl;
+    cout << "t - Search for a book by title" << endl;
+    cout << "r - Reserve a book" << endl;
+    cout << "q - Exit" << endl;
 }
 
 void Menu::printAccountMenu()
@@ -44,9 +54,42 @@ void Menu::printAccountMenu()
     cout << "e - Edit an existing account" << endl;
 };
 
-void Menu::switchLibraryMenu()  //tu se wpisujesz switch do metod operujących na twojej liście
+void Menu::switchLibraryMenu(BookList &books) 
 {
+    UserInput choice;
+    string buffer1, buffer2;
 
+    choice.receiveInput();
+
+    switch(choice.input)
+    {
+        case 'a':
+            cout << "Author of a book: ";
+            cin >> buffer1;
+            books.search_by_author(buffer1);
+            break;
+        case 't':
+            cout << "Title of a book: ";
+            cin >> buffer1;
+            books.search_by_title(buffer1);
+            break;
+
+        case 'r':
+            cout << "Author of a book: ";
+            cin >> buffer1;
+            cout << "Title of a book: ";
+            cin >> buffer2;
+            books.reserve_book(buffer1, buffer2);
+            break;
+
+        case 'q':
+            exit(0);
+            break;
+
+        default:
+            cout << "This key has no function! Try again." << endl;
+            break;
+    }  
 }
 
 void Menu::switchAccountMenu(AccountList &accountList)
