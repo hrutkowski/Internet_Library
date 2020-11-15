@@ -14,7 +14,9 @@ AccountList::AccountList()
 void AccountList::createAccount(string name, string password)
 {
     Account *newAccount = new Account;
-    if (firstAccount== 0)
+    newAccount->name = name;
+    newAccount->password = password;
+    if (firstAccount == 0)
     {
         firstAccount = newAccount;
     }
@@ -36,10 +38,38 @@ void AccountList::createAccount(string name, string password)
 
 void AccountList::removeAccount(string name, string password)
 {
+       Account *temp = firstAccount;
+
+    while (temp)
+    {
+    if (name == temp->name && password == temp->password)
+        {
+            temp->name = "";
+            temp->password = "";
+            temp = temp->nextAccount;
+        }
+    else
+    {
+        temp = temp->nextAccount;
+    }
+    }
 
 };
 
 void AccountList::editAccount(string search)
 {
+  Account *temp = firstAccount;
 
+    while (temp)
+    {
+    if (search == temp->name)
+        {
+            cout << "Name:" << temp->name;
+            temp = temp->nextAccount;
+        }
+    else
+    {
+        temp = temp->nextAccount;
+    }
+    }
 };

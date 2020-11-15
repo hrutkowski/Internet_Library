@@ -7,22 +7,13 @@ using namespace std;
 
 Account::Account()
 {
-    
+    name = "";
+    password = "";
 };
 
 Account::Account(string name, string password)
 {
     name = name;
     password = password;
-};
-
-void Account::setName(string newName)
-{
-    name = newName;
-};
-
-void Account::setPassword(string newPassword)
-{
-    password = newPassword;
 };
 
