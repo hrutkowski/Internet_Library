@@ -12,6 +12,8 @@ void Menu::chooseMenu()
     AccountList List;
     BookList Books;
 
+
+    system("clear");
     cout<<"Welcome in our amazing library"<<endl;
     cout<<"l - go to library menu"<<endl;
     cout<<"a - go to account menu"<<endl;
@@ -39,6 +41,7 @@ void Menu::chooseMenu()
 
 void Menu::printLibraryMenu()
 {
+    system("clear");
     cout << "Library Menu" << endl;
     cout << "a - Search for a book by author" << endl;
     cout << "t - Search for a book by title" << endl;
@@ -48,6 +51,7 @@ void Menu::printLibraryMenu()
 
 void Menu::printAccountMenu()
 {
+    system("clear");
     cout << "Account Menu" << endl;
     cout << "c - Create a new account" << endl;
     cout << "r - Remove and existing account" << endl;
@@ -64,17 +68,20 @@ void Menu::switchLibraryMenu(BookList &books)
     switch(choice.input)
     {
         case 'a':
+            system("clear");
             cout << "Author of a book: ";
             cin >> buffer1;
             books.search_by_author(buffer1);
             break;
         case 't':
+            system("clear");
             cout << "Title of a book: ";
             cin >> buffer1;
             books.search_by_title(buffer1);
             break;
 
         case 'r':
+            system("clear");
             cout << "Author of a book: ";
             cin >> buffer1;
             cout << "Title of a book: ";
@@ -87,9 +94,10 @@ void Menu::switchLibraryMenu(BookList &books)
             break;
 
         default:
+            system("clear");
             cout << "This key has no function! Try again." << endl;
             break;
-    }  
+    }
 }
 
 void Menu::switchAccountMenu(AccountList &accountList)
@@ -102,6 +110,7 @@ void Menu::switchAccountMenu(AccountList &accountList)
     switch(choice.input)
     {
         case 'c':
+            system("clear");
             cout << "Name?" << endl;
             cin >> buffer1;
             cout << "Password?" << endl;
@@ -110,6 +119,7 @@ void Menu::switchAccountMenu(AccountList &accountList)
             cout << "Account created!" << endl;
             break;
         case 'r':
+            system("clear");
             cout << "Name?" << endl;
             cin >> buffer1;
             cout << "Password?" << endl;
@@ -117,6 +127,7 @@ void Menu::switchAccountMenu(AccountList &accountList)
             accountList.removeAccount(buffer1, buffer2);
             break;
         case 'e':
+            system("clear");
             cout << "Name?" << endl;
             cin >> buffer1;
             accountList.editAccount(buffer1);
