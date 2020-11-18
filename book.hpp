@@ -5,12 +5,12 @@ using namespace std;
 
 class Book
 {
+
+    public:
     string title; //book name
     string author; //book's author
     bool taken; //state
     Book* nextBook;
-    
-    public:
         Book();  //c-tor
         Book(string title, string author);
         string return_title(string title);
