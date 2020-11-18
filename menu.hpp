@@ -2,6 +2,7 @@
 #include <iostream>
 #include "accountlist.cpp"
 #include "booklist.cpp"
+#include "booktxt.cpp"
 
 using namespace std;
 

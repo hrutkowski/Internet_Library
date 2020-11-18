@@ -1,5 +1,6 @@
 #pragma once 
 #include <iostream>
+#include <unistd.h>
 #include "menu.hpp"
 #include "userInput.cpp"
 
@@ -12,6 +13,8 @@ void Menu::chooseMenu()
     AccountList List;
     BookList Books;
 
+    BookTXT Fileloader;
+    Fileloader.loadFile(Books);
 
     system("clear");
     cout<<"Welcome in our amazing library"<<endl;
@@ -71,21 +74,27 @@ void Menu::switchLibraryMenu(BookList &books)
             system("clear");
             cout << "Author of a book: ";
             cin >> buffer1;
+            system("clear");
             books.search_by_author(buffer1);
+            sleep(5);
             break;
         case 't':
             system("clear");
             cout << "Title of a book: ";
             cin >> buffer1;
+            system("clear");
             books.search_by_title(buffer1);
+            sleep(5);
             break;
 
         case 'r':
             system("clear");
             cout << "Author of a book: ";
             cin >> buffer1;
+            system("clear");
             cout << "Title of a book: ";
             cin >> buffer2;
+            system("clear");
             books.reserve_book(buffer1, buffer2);
             break;
 
