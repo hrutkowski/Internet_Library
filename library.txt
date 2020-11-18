@@ -1,7 +1,8 @@
-Dżuma Camus
-Syzyfowe_prace Żeromski
-Balladyna Słowacki
-Janko_Muzykant Sienkiewicz
-Pan_Tadeusz Mickiewicz
-Lalka Prus
-Makbet Szekspir
+Camus Dzuma
+Żeromski Syzyfowe_prace 
+Słowacki Balladyna 
+Sienkiewicz Janko_Muzykant
+Mickiewicz Pan_Tadeusz
+Prus Lalka 
+Szekspir Makbet
+
