@@ -12,8 +12,8 @@ class BookList
     BookList();
     void search_by_author(string author);
     void search_by_title(string title);
-    void reserve_book(string title, string author);
-    void add_book(string title, string author);
+    void reserve_book(string author, string title);
+    void add_book(string author, string title);
     friend class BookTXT;
     ~BookList()=default;
 };
