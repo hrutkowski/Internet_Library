@@ -27,7 +27,17 @@ void BookList::search_by_author(string author)
 
 void BookList::search_by_title(string title)
 {
+    Book *temp = firstBook;
 
+    while (temp)
+    {
+        if (title == temp->title)
+            {
+                cout <<  temp->author << " - " << "\"" << temp->title << "\"" <<endl;
+                temp = temp->nextBook;   
+            }
+        else temp = temp->nextBook;
+    }
 }
 
 void BookList::reserve_book(string title, string author)
