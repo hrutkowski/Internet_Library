@@ -75,6 +75,7 @@ void Menu::switchLibraryMenu(BookList &books)
             cout << "Author of a book: ";
             cin >> buffer1;
             system("clear");
+            cout << "Searching results:" << endl;
             books.search_by_author(buffer1);
             sleep(5);
             break;

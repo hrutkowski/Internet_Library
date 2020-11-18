@@ -16,13 +16,12 @@ void BookList::search_by_author(string author)
 
     while (temp)
     {
-    if (author == temp->author)
-        {
-            cout << "Book that you ale looking for:" << endl;
-            cout << "\"" << temp->author << "\"" << " - " << temp->title <<endl;
-            temp = temp->nextBook;   
-        }
-    else temp = temp->nextBook;
+        if (author == temp->author)
+            {
+                cout <<  temp->author << " - " << "\"" << temp->title << "\"" <<endl;
+                temp = temp->nextBook;   
+            }
+        else temp = temp->nextBook;
     }
 }
 

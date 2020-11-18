@@ -5,4 +5,8 @@ Sienkiewicz Janko_Muzykant
 Mickiewicz Pan_Tadeusz
 Prus Lalka 
 Szekspir Makbet
+Szekspir Hamlet
+Mickiewicz DziadyIV
+Mickiewicz DziadyII
+Mickiewicz DziadyIII
 
