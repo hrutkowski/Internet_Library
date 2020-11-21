@@ -9,7 +9,9 @@ using namespace std;
 
 class BookTXT
 {
-public:
-    void loadFile(BookList &BooksTXT);
+    public:
+    void load_file(BookList &BooksTXT);
+    void update_file(BookList &BooksTXT);
     ifstream inFile;
+    ofstream outFile;
 };

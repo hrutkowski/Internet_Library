@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void BookTXT::loadFile(BookList &BooksTXT)
+void BookTXT::load_file(BookList &BooksTXT)
 {
     inFile.open("library.txt");
     
@@ -26,4 +26,22 @@ void BookTXT::loadFile(BookList &BooksTXT)
     }
 
     inFile.close();
+};
+
+void BookTXT::update_file(BookList &BooksTXT)
+{
+    outFile.open("library.txt", fstream::out);
+    
+    if (outFile.is_open())
+    {
+        Book* temp = BooksTXT.firstBook;
+
+        while (temp)
+        {
+            outFile << temp->get_author() << " " << temp->get_title() 
+            << " " << temp->get_taken() << endl;
+            temp = temp->get_nextBook();
+        }
+    }
+    outFile.close();
 };
