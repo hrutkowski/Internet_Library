@@ -16,27 +16,31 @@ void BookList::search_by_author(string author)
 
     while (temp)
     {
-        if (author == temp->author)
+        if (author == temp->get_author())
             {
-                cout <<  temp->author << " - " << "\"" << temp->title << "\"" <<endl;
-                temp = temp->nextBook;   
+                cout <<  temp->get_author() << " - " << "\"" << temp->get_title() << "\"";
+                if(temp->get_taken()==true) cout << " - TAKEN" << endl;
+                else cout << " - AVAILABLE" << endl;
+                temp = temp->get_nextBook();   
             }
-        else temp = temp->nextBook;
+        else temp = temp->get_nextBook();
     }
 }
 
 void BookList::search_by_title(string title)
 {
     Book *temp = firstBook;
-
+    
     while (temp)
     {
-        if (title == temp->title)
+        if (title == temp->get_title())
             {
-                cout <<  temp->author << " - " << "\"" << temp->title << "\"" <<endl;
-                temp = temp->nextBook;   
+                cout <<  temp->get_author() << " - " << "\"" << temp->get_title() << "\"";
+                if(temp->get_taken()==true) cout << " - TAKEN" << endl;
+                else cout << " - AVAILABLE" << endl;
+                temp = temp->get_nextBook();   
             }
-        else temp = temp->nextBook;
+        else temp = temp->get_nextBook();
     }
 }
 
@@ -45,11 +49,12 @@ void BookList::reserve_book(string title, string author)
 
 }
 
-void BookList::add_book(string author, string title)
+void BookList::add_book(string author, string title, bool taken)
 {
     Book *newBook = new Book;
-    newBook->title = title;
-    newBook->author = author;
+    newBook->set_title(title);
+    newBook->set_author(author);
+    newBook->set_taken(taken);
     if (firstBook == 0)
     {
         firstBook = newBook;
