@@ -8,6 +8,10 @@ class UserInput
 {
 public:
     char input;
+    string stringInput;
+    bool boolInput;
     UserInput();
     void receiveInput();
+    void receiveStringInput();
+    void receiveBoolInput();
 };
