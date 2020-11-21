@@ -46,10 +46,11 @@ void Menu::printLibraryMenu()
 {
     system("clear");
     cout << "Library Menu" << endl;
+    cout << "d - Add a book" << endl;
     cout << "a - Search for a book by author" << endl;
     cout << "t - Search for a book by title" << endl;
     cout << "r - Reserve a book" << endl;
-    cout << "d - Add a book" << endl;
+    cout << "e - Return a book" << endl;
     cout << "q - Exit" << endl;
 }
 
@@ -101,6 +102,18 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             cin >> buffer2;
             system("clear");
             books.reserve_book(buffer1, buffer2);
+            updater.update_file(books);
+            break;
+
+        case 'e':
+            system("clear");
+            cout << "Author of a book: ";
+            cin >> buffer1;
+            system("clear");
+            cout << "Title of a book: ";
+            cin >> buffer2;
+            system("clear");
+            books.return_book(buffer1, buffer2);
             updater.update_file(books);
             break;
 

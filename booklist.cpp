@@ -59,6 +59,21 @@ void BookList::reserve_book(string author, string title)
     }
 }
 
+void BookList::return_book(string author, string title)
+{
+    Book *temp = firstBook;
+
+    while (temp)
+    {
+        if (title == temp->get_title() && author == temp->get_author())
+        {
+            temp->set_taken(0);
+            temp = temp->get_nextBook();
+        }
+        else temp = temp->get_nextBook();
+    }
+}
+
 void BookList::add_book(string author, string title, bool taken)
 {
     Book *newBook = new Book;
