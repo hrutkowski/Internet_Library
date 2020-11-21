@@ -12,9 +12,9 @@ void Menu::chooseMenu()
     UserInput choice;
     AccountList List;
     BookList Books;
+    BookTXT FileWorker;
 
-    BookTXT Fileloader;
-    Fileloader.loadFile(Books);
+    FileWorker.load_file(Books);
 
     system("clear");
     cout<<"Welcome in our amazing library"<<endl;
@@ -36,7 +36,7 @@ void Menu::chooseMenu()
             while(1)
             {
             printLibraryMenu();
-            switchLibraryMenu(Books);
+            switchLibraryMenu(Books, FileWorker);
             }
             break;
     };  
@@ -62,7 +62,7 @@ void Menu::printAccountMenu()
     cout << "e - Edit an existing account" << endl;
 };
 
-void Menu::switchLibraryMenu(BookList &books) 
+void Menu::switchLibraryMenu(BookList &books, BookTXT &updater) 
 {
     UserInput choice;
     string buffer1, buffer2; 
@@ -102,6 +102,7 @@ void Menu::switchLibraryMenu(BookList &books)
             system("clear");
             books.reserve_book(buffer1, buffer2);
             break;
+
         case 'd':
             system("clear");
             cout << "Type surname of the author of a book (if space use floor '_'): ";
@@ -110,11 +111,13 @@ void Menu::switchLibraryMenu(BookList &books)
             cout << "Type the title of a book (if space use floor '_'): ";
             cin >> buffer2;
             system("clear");
-            cout << "Type: 1-taken, 0-available: ";
+            cout << "Type 1 if taken and 0 if available: ";
             cin >> buffer3;
             system("clear");
             books.add_book(buffer1, buffer2, buffer3);
+            updater.update_file(books);
             break;
+
         case 'q':
             exit(0);
             break;
