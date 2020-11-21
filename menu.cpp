@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "menu.hpp"
 #include "userInput.cpp"
+#include "messenger.cpp"
 
 
 using namespace std;
@@ -66,7 +67,8 @@ void Menu::printAccountMenu()
 void Menu::switchLibraryMenu(BookList &books, BookTXT &updater) 
 {
     UserInput choice;
-    string buffer1, buffer2; 
+    Messenger mess;
+    string buffer1, buffer2, sentence;
     bool buffer3;
 
     choice.receiveInput();
@@ -75,7 +77,8 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
     {
         case 'a':
             system("clear");
-            cout << "Author of a book: ";
+            sentence = "Author of a book: ";
+            mess.showText(sentence);
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
             system("clear");
