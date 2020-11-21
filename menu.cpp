@@ -49,6 +49,7 @@ void Menu::printLibraryMenu()
     cout << "a - Search for a book by author" << endl;
     cout << "t - Search for a book by title" << endl;
     cout << "r - Reserve a book" << endl;
+    cout << "d - Add a book" << endl;
     cout << "q - Exit" << endl;
 }
 
@@ -64,7 +65,8 @@ void Menu::printAccountMenu()
 void Menu::switchLibraryMenu(BookList &books) 
 {
     UserInput choice;
-    string buffer1, buffer2;
+    string buffer1, buffer2; 
+    bool buffer3;
 
     choice.receiveInput();
 
@@ -79,6 +81,7 @@ void Menu::switchLibraryMenu(BookList &books)
             books.search_by_author(buffer1);
             sleep(5);
             break;
+
         case 't':
             system("clear");
             cout << "Title of a book: ";
@@ -99,7 +102,19 @@ void Menu::switchLibraryMenu(BookList &books)
             system("clear");
             books.reserve_book(buffer1, buffer2);
             break;
-
+        case 'd':
+            system("clear");
+            cout << "Type surname of the author of a book (if space use floor '_'): ";
+            cin >> buffer1;
+            system("clear");
+            cout << "Type the title of a book (if space use floor '_'): ";
+            cin >> buffer2;
+            system("clear");
+            cout << "Type: 1-taken, 0-available: ";
+            cin >> buffer3;
+            system("clear");
+            books.add_book(buffer1, buffer2, buffer3);
+            break;
         case 'q':
             exit(0);
             break;
