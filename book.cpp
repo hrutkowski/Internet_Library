@@ -15,21 +15,41 @@ Book::Book(string title, string author)
     author = "";
 }
 
-string Book::return_title(string title)
+auto Book::get_title() 
 {
     return title;
 }
 
-string Book::return_author(string author)
+auto Book::set_title(string given_title)
+{
+    title = given_title;
+}
+
+auto Book::get_author()
 {
     return author;
 }
-bool Book::return_taken(bool taken)
+
+auto Book::set_author(string given_author)
+{
+    author = given_author;
+}
+
+auto Book::get_taken()
 {
     return taken;
 }
 
-Book* Book::return_nextBook(Book* nextBook)
+auto Book::set_taken(bool given_taken)
+{
+    taken = given_taken;
+}
+
+auto Book::get_nextBook() 
 {
     return nextBook;
+}
+auto Book::set_nextBook(Book* given_nextBook)
+{
+    nextBook = given_nextBook;
 }

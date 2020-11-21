@@ -5,18 +5,24 @@ using namespace std;
 
 class Book
 {
-
-    public:
     string title; //book name
     string author; //book's author
     bool taken; //state
     Book* nextBook;
-        Book();  //c-tor
-        Book(string title, string author);
-        string return_title(string title);
-        string return_author(string author);
-        bool return_taken(bool taken);
-        Book* return_nextBook(Book* nextBook);
-        ~Book()=default; //d-tor
+    
+    public:
+    Book();  //c-tor
+    Book(string title, string author);
+    auto get_title();
+    auto set_title(string given_title);
+    auto get_author(); 
+    auto set_author(string given_author);
+    auto get_taken(); 
+    auto set_taken(bool given_taken);
+    auto get_nextBook();
+    auto set_nextBook(Book* given_nextBook);
+    friend class BookList;
+    friend class BookTXT;
+    ~Book()=default; //d-tor
 
 };
