@@ -76,7 +76,8 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
         case 'a':
             system("clear");
             cout << "Author of a book: ";
-            cin >> buffer1;
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
             system("clear");
             cout << "Searching results:" << endl;
             books.search_by_author(buffer1);
@@ -86,7 +87,8 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
         case 't':
             system("clear");
             cout << "Title of a book: ";
-            cin >> buffer1;
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
             system("clear");
             cout << "Searching results:" << endl;
             books.search_by_title(buffer1);
@@ -96,10 +98,12 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
         case 'r':
             system("clear");
             cout << "Author of a book: ";
-            cin >> buffer1;
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
             system("clear");
             cout << "Title of a book: ";
-            cin >> buffer2;
+            choice.receiveStringInput();
+            buffer2 = choice.stringInput;
             system("clear");
             books.reserve_book(buffer1, buffer2);
             updater.update_file(books);
@@ -108,10 +112,12 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
         case 'e':
             system("clear");
             cout << "Author of a book: ";
-            cin >> buffer1;
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
             system("clear");
             cout << "Title of a book: ";
-            cin >> buffer2;
+            choice.receiveStringInput();
+            buffer2 = choice.stringInput;
             system("clear");
             books.return_book(buffer1, buffer2);
             updater.update_file(books);
@@ -120,13 +126,16 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
         case 'd':
             system("clear");
             cout << "Type surname of the author of a book (if space use floor '_'): ";
-            cin >> buffer1;
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
             system("clear");
             cout << "Type the title of a book (if space use floor '_'): ";
-            cin >> buffer2;
+            choice.receiveStringInput();
+            buffer2 = choice.stringInput;
             system("clear");
             cout << "Type 1 if taken and 0 if available: ";
-            cin >> buffer3;
+            choice.receiveBoolInput();
+            buffer3 = choice.boolInput;
             system("clear");
             books.add_book(buffer1, buffer2, buffer3);
             updater.update_file(books);
