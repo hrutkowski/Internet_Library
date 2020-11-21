@@ -101,6 +101,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             cin >> buffer2;
             system("clear");
             books.reserve_book(buffer1, buffer2);
+            updater.update_file(books);
             break;
 
         case 'd':

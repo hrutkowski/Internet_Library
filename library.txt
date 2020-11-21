@@ -1,9 +1,9 @@
-Camus Dzuma 0
+Camus Dżuma 0
 Żeromski Syzyfowe_prace 0
 Słowacki Balladyna 0
 Sienkiewicz Janko_Muzykant 0
 Mickiewicz Pan_Tadeusz 0
-Prus Lalka 0
+Prus Lalka 1
 Szekspir Makbet 0
 Szekspir Hamlet 0
 Mickiewicz DziadyIV 0

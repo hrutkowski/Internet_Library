@@ -50,7 +50,7 @@ void BookList::reserve_book(string author, string title)
 
     while (temp)
     {
-        if (title == temp->get_title())
+        if (title == temp->get_title() && author == temp->get_author())
         {
             temp->set_taken(1);
             temp = temp->get_nextBook();
