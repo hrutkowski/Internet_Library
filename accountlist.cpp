@@ -33,7 +33,6 @@ void AccountList::createAccount(string name, string password)
         temp->nextAccount = newAccount;
         newAccount->nextAccount = 0;
     }
-    delete newAccount;
 };
 
 void AccountList::removeAccount(string name, string password)
@@ -49,11 +48,10 @@ void AccountList::removeAccount(string name, string password)
             temp = temp->nextAccount;
         }
     else
-    {
-        temp = temp->nextAccount;
-    }
-    }
-
+        {
+            temp = temp->nextAccount;
+        }
+    };
 };
 
 void AccountList::editAccount(string old, string change)

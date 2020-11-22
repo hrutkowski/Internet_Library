@@ -179,7 +179,8 @@ void Menu::switchAccountMenu(AccountList &accountList)
             accountList.createAccount(buffer1, buffer2);
             message = "Account created! Press any button to continue.";
             mess.showText(message);
-            cin.ignore();
+            cin.get();
+            cin.get();
             break;
         case 'r':
             system("clear");
@@ -194,7 +195,8 @@ void Menu::switchAccountMenu(AccountList &accountList)
             accountList.removeAccount(buffer1, buffer2);
             message = "Account removed! Press any button to continue.";
             mess.showText(message);
-            cin.ignore();
+            cin.get();
+            cin.get();
             break;
         case 'e':
             system("clear");
@@ -227,7 +229,8 @@ void Menu::switchAccountMenu(AccountList &accountList)
             }
             message = "Edit succesful. Press any button to continue.";
             mess.showText(message);
-            cin.ignore();
+            cin.get();
+            cin.get();
             break;
         case 'q':
             exit(0);

@@ -17,8 +17,6 @@ unsigned int rand_i(unsigned int min, unsigned int max)
 
 Account::Account()
 {
-    name = "";
-    password = "";
     isAdmin = false;
 };
 
