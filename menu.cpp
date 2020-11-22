@@ -14,13 +14,14 @@ void Menu::chooseMenu()
     AccountList List;
     BookList Books;
     BookTXT FileWorker;
+    Messenger mess;
 
     FileWorker.load_file(Books);
 
     system("clear");
-    cout<<"Welcome in our amazing library"<<endl;
-    cout<<"l - go to library menu"<<endl;
-    cout<<"a - go to account menu"<<endl;
+    mess.showText("Welcome in our amazing library ");
+    mess.showText("l - go to library menu ");
+    mess.showText("a - go to account menu ");
 
     choice.receiveInput();
 
@@ -45,14 +46,16 @@ void Menu::chooseMenu()
 
 void Menu::printLibraryMenu()
 {
+    Messenger mess;
+
     system("clear");
-    cout << "Library Menu" << endl;
-    cout << "d - Add a book" << endl;
-    cout << "a - Search for a book by author" << endl;
-    cout << "t - Search for a book by title" << endl;
-    cout << "r - Reserve a book" << endl;
-    cout << "e - Return a book" << endl;
-    cout << "q - Exit" << endl;
+    mess.showText("Library Menu ");
+    mess.showText("d - Add a book ");
+    mess.showText("a - Search for a book by author ");
+    mess.showText("t - Search for a book by title ");
+    mess.showText("r - Reserve a book ");
+    mess.showText("e - Return a book ");
+    mess.showText("q - Exit");
 }
 
 void Menu::printAccountMenu()
@@ -78,34 +81,33 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
     {
         case 'a':
             system("clear");
-            sentence = "Author of a book: ";
-            mess.showText(sentence);
+            mess.showText("Author of a book: ");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
             system("clear");
-            cout << "Searching results:" << endl;
+            mess.showText("Searching results: ");
             books.search_by_author(buffer1);
             sleep(5);
             break;
 
         case 't':
             system("clear");
-            cout << "Title of a book: ";
+            mess.showText("Title of a book: ");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
             system("clear");
-            cout << "Searching results:" << endl;
+            mess.showText("Searching results: ");
             books.search_by_title(buffer1);
             sleep(5);
             break;
 
         case 'r':
             system("clear");
-            cout << "Author of a book: ";
+            mess.showText("Author of a book: ");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
             system("clear");
-            cout << "Title of a book: ";
+            mess.showText("Title of a book: ");
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             system("clear");
@@ -115,11 +117,11 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
 
         case 'e':
             system("clear");
-            cout << "Author of a book: ";
+            mess.showText("Author of a book: ");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
             system("clear");
-            cout << "Title of a book: ";
+            mess.showText("Title of a book: ");
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             system("clear");
@@ -129,15 +131,15 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
 
         case 'd':
             system("clear");
-            cout << "Type surname of the author of a book (if space use floor '_'): ";
+            mess.showText("Type surname of the author of a book (if space use floor '_'): ");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
             system("clear");
-            cout << "Type the title of a book (if space use floor '_'): ";
+            mess.showText("Type the title of a book (if space use floor '_'): ");
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             system("clear");
-            cout << "Type 1 if taken and 0 if available: ";
+            mess.showText("Type 1 if taken and 0 if available: ");
             choice.receiveBoolInput();
             buffer3 = choice.boolInput;
             system("clear");
@@ -151,7 +153,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
 
         default:
             system("clear");
-            cout << "This key has no function! Try again." << endl;
+            mess.showText("This key has no function! Try again ");
             break;
     }
 }
