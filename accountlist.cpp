@@ -3,6 +3,7 @@
 #include <cstring>
 #include "accountlist.hpp"
 #include "account.cpp"
+#include "userInput.hpp"
 
 using namespace std;
 
@@ -64,7 +65,6 @@ void AccountList::editAccount(string search)
     {
     if (search == temp->getName())
         {
-            cout << "Name:" << temp->getName();
             temp = temp->nextAccount;
         }
     else

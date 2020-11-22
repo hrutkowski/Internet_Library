@@ -158,7 +158,9 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
 void Menu::switchAccountMenu(AccountList &accountList)
 {
     UserInput choice;
+    Messenger mess;
     string buffer1, buffer2;
+    string message;
 
     choice.receiveInput();
 
@@ -166,25 +168,36 @@ void Menu::switchAccountMenu(AccountList &accountList)
     {
         case 'c':
             system("clear");
-            cout << "Name?" << endl;
-            cin >> buffer1;
-            cout << "Password?" << endl;
-            cin >> buffer2;
+            message = "Name?";
+            mess.showText(message);
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
+            message = "Password?";
+            mess.showText(message);
+            choice.receiveStringInput();
+            buffer2 = choice.stringInput;
             accountList.createAccount(buffer1, buffer2);
-            cout << "Account created!" << endl;
+            message = "Account created!";
+            mess.showText(message);
             break;
         case 'r':
             system("clear");
-            cout << "Name?" << endl;
-            cin >> buffer1;
-            cout << "Password?" << endl;
-            cin >> buffer2;
+            message = "Name?";
+            mess.showText(message);
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
+            message = "Password?";
+            mess.showText(message);
+            choice.receiveStringInput();
+            buffer2 = choice.stringInput;
             accountList.removeAccount(buffer1, buffer2);
             break;
         case 'e':
             system("clear");
-            cout << "Name?" << endl;
-            cin >> buffer1;
+            message = "Name?";
+            mess.showText(message);
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
             accountList.editAccount(buffer1);
             break;
         case 'q':

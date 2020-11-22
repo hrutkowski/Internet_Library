@@ -9,6 +9,7 @@ UserInput::UserInput()
 {
     input = 0;
     stringInput = " ";
+    boolInput = false;
 };
 
 void UserInput::receiveInput()
