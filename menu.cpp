@@ -62,6 +62,7 @@ void Menu::printAccountMenu()
     cout << "c - Create a new account" << endl;
     cout << "r - Remove and existing account" << endl;
     cout << "e - Edit an existing account" << endl;
+    cout << "d - Display card number" << endl;
 };
 
 void Menu::switchLibraryMenu(BookList &books, BookTXT &updater) 
@@ -164,7 +165,7 @@ void Menu::switchAccountMenu(AccountList &accountList)
 
     choice.receiveInput();
 
-    switch(choice.input)
+    switch(choice.input) //todo: add findaccount check before each function
     {
         case 'c':
             system("clear");
@@ -232,6 +233,23 @@ void Menu::switchAccountMenu(AccountList &accountList)
             cin.get();
             cin.get();
             break;
+        case 'd':
+            system("clear");
+            message = "Name?";
+            mess.showText(message);
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
+            if (accountList.findAccount(buffer1) == true)
+            {
+                system("clear");
+                message = "Password?";
+                mess.showText(message);
+                choice.receiveStringInput();
+                buffer2 = choice.stringInput;
+                accountList.displayCardNumber(buffer1, buffer2);
+                cin.get();
+                cin.get();
+            }
         case 'q':
             exit(0);
             break;

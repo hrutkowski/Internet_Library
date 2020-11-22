@@ -35,7 +35,7 @@ void AccountList::createAccount(string name, string password)
     }
 };
 
-void AccountList::removeAccount(string name, string password)
+void AccountList::removeAccount(string name, string password) //todo fix and add pointer delete
 {
        Account *temp = firstAccount;
 
