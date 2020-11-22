@@ -6,11 +6,18 @@ using namespace std;
 
 class Account
 {
+private:
+    string name;
+    string password;
+    int cardnumber;
 public:
     Account();
     Account(string name, string password);
     Account *nextAccount;
-    string name;
-    string password;
-    string cardNumber;
+    void generateCard();
+    void getCardNo();
+    string getName();
+    string getPassword();
+    void setName(string newName);
+    void setPassword(string newPassword);
 };
