@@ -1,15 +1,24 @@
 #pragma once
 #include <iostream>
 #include <cstring>
+#include <random>
 #include "account.hpp"
 
 using namespace std;
+
+unsigned int rand_i(unsigned int min, unsigned int max)
+{
+    static std::random_device rd;
+    static std::mt19937 gen(rd()); 
+    std::uniform_int_distribution<unsigned int> distrib(min, max);
+ 
+    return distrib(gen);
+};
 
 Account::Account()
 {
     name = "";
     password = "";
-    cardnumber = 0;
     isAdmin = false;
 };
 
@@ -17,14 +26,14 @@ Account::Account(string name, string password)
 {
     name = name;
     password = password;
-    cardnumber = 0;
+     generateCardNo(cardnumber);
 };
 
 Account::Account(string name, string password, string key)
 {
     name = name;
     password = password;
-    cardnumber = 0;
+     generateCardNo(cardnumber);
     if (key == "iamadmin") isAdmin = true;
     else 
     {
@@ -33,7 +42,7 @@ Account::Account(string name, string password, string key)
     };
 };
 
-int Account::getCardNo()
+vector<int> Account::getCardNo()
 {
     return(cardnumber);
 };
@@ -57,3 +66,12 @@ void Account::setPassword(string newPassword)
 {
     password = newPassword;
 };
+
+void Account::generateCardNo(vector<int> cardnumber)
+{
+    for (int i=0; i<10; i++)
+    {
+        auto x = rand_i(0,9);
+        cardnumber.push_back(x);
+    };
+}

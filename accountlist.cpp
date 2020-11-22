@@ -73,3 +73,27 @@ void AccountList::editAccount(string search)
     }
     }
 };
+
+void AccountList::displayCardNumber(string name, string password)
+{
+  Account *temp = firstAccount;
+  vector<int> cardnumber;
+
+    while (temp)
+    {
+    if (name == temp->getName() && password == temp->getPassword())
+        {
+            cardnumber = temp->getCardNo();
+            for (int i=0; i<10; i++)
+            {
+                cout << cardnumber[i];
+                if (i==9) cout << endl;
+            };
+            temp = temp->nextAccount;
+        }
+    else
+    {
+        temp = temp->nextAccount;
+    }
+    }
+};

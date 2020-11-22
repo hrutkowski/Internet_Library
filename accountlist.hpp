@@ -12,4 +12,5 @@ struct AccountList
     void createAccount(string name, string password);
     void removeAccount(string name, string password);
     void editAccount(string search);
+    void displayCardNumber(string name, string password);
 };

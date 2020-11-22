@@ -10,4 +10,8 @@ class AccountDataBase
     public:
     AccountDataBase();
     void loadDatabase();
-}
+    void saveDataBase();
+    void eraseDataBase();
+    ifstream inFile;
+    ofstream outFile;
+};
