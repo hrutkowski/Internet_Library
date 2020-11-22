@@ -10,12 +10,14 @@ private:
     string name;
     string password;
     int cardnumber;
+    bool isAdmin;
 public:
     Account();
     Account(string name, string password);
+    Account(string name, string password, string key);
     Account *nextAccount;
     void generateCard();
-    void getCardNo();
+    int getCardNo();
     string getName();
     string getPassword();
     void setName(string newName);

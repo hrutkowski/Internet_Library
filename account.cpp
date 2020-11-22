@@ -10,6 +10,7 @@ Account::Account()
     name = "";
     password = "";
     cardnumber = 0;
+    isAdmin = false;
 };
 
 Account::Account(string name, string password)
@@ -17,6 +18,24 @@ Account::Account(string name, string password)
     name = name;
     password = password;
     cardnumber = 0;
+};
+
+Account::Account(string name, string password, string key)
+{
+    name = name;
+    password = password;
+    cardnumber = 0;
+    if (key == "iamadmin") isAdmin = true;
+    else 
+    {
+        isAdmin = false;
+        cout << "Wrong key!" << endl;
+    };
+};
+
+int Account::getCardNo()
+{
+    return(cardnumber);
 };
 
 string Account::getName()
