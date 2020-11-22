@@ -3,7 +3,6 @@
 #include <cstring>
 #include "accountlist.hpp"
 #include "account.cpp"
-#include "userInput.hpp"
 
 using namespace std;
 
@@ -57,16 +56,22 @@ void AccountList::removeAccount(string name, string password)
 
 };
 
-void AccountList::editAccount(string search)
+void AccountList::editAccount(string old, string change)
 {
   Account *temp = firstAccount;
 
     while (temp)
     {
-    if (search == temp->getName())
+    if (old == temp->getName())
         {
+            temp->setName(change);
             temp = temp->nextAccount;
         }
+    else if (old == temp->getPassword())
+    {
+        temp->setPassword(change);
+        temp = temp->nextAccount;
+    }
     else
     {
         temp = temp->nextAccount;
@@ -96,4 +101,23 @@ void AccountList::displayCardNumber(string name, string password)
         temp = temp->nextAccount;
     }
     }
+};
+
+bool AccountList::findAccount(string search)
+{
+  Account *temp = firstAccount;
+
+    while (temp)
+    {
+    if (search == temp->getName())
+        {
+            temp = temp->nextAccount;
+            return true;
+        }
+    else
+    {
+        temp = temp->nextAccount;
+    }
+    }
+    return false;
 };

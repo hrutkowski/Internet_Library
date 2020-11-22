@@ -177,8 +177,9 @@ void Menu::switchAccountMenu(AccountList &accountList)
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             accountList.createAccount(buffer1, buffer2);
-            message = "Account created!";
+            message = "Account created! Press any button to continue.";
             mess.showText(message);
+            cin.ignore();
             break;
         case 'r':
             system("clear");
@@ -191,6 +192,9 @@ void Menu::switchAccountMenu(AccountList &accountList)
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             accountList.removeAccount(buffer1, buffer2);
+            message = "Account removed! Press any button to continue.";
+            mess.showText(message);
+            cin.ignore();
             break;
         case 'e':
             system("clear");
@@ -198,7 +202,32 @@ void Menu::switchAccountMenu(AccountList &accountList)
             mess.showText(message);
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
-            accountList.editAccount(buffer1);
+            if (accountList.findAccount(buffer1) == true)
+            {
+                message = "What would you like to do?\n p - change password\n n - change name\n";
+                mess.showText(message);
+                choice.receiveInput();
+                switch(choice.input)
+                    case 'p':
+                    message = "Old password?";
+                    mess.showText(message);
+                    choice.receiveStringInput();
+                    buffer1 = choice.stringInput;
+                    message = "New password?";
+                    mess.showText(message);
+                    choice.receiveStringInput();
+                    buffer2 = choice.stringInput;
+                    accountList.editAccount(buffer1, buffer2);
+                    case 'n':
+                    message = "New name?";
+                    mess.showText(message);
+                    choice.receiveStringInput();
+                    buffer2 = choice.stringInput;
+                    accountList.editAccount(buffer1, buffer2);
+            }
+            message = "Edit succesful. Press any button to continue.";
+            mess.showText(message);
+            cin.ignore();
             break;
         case 'q':
             exit(0);
