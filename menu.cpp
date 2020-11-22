@@ -87,7 +87,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             system("clear");
             mess.showText("Searching results: ");
             books.search_by_author(buffer1);
-            sleep(5);
+            sleep(3);
             break;
 
         case 't':
@@ -98,7 +98,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             system("clear");
             mess.showText("Searching results: ");
             books.search_by_title(buffer1);
-            sleep(5);
+            sleep(3);
             break;
 
         case 'r':
@@ -111,8 +111,10 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             system("clear");
+            mess.showText("Result: ");
             books.reserve_book(buffer1, buffer2);
             updater.update_file(books);
+            sleep(3);
             break;
 
         case 'e':
@@ -125,8 +127,10 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             system("clear");
+            mess.showText("Result: ");
             books.return_book(buffer1, buffer2);
             updater.update_file(books);
+            sleep(3);
             break;
 
         case 'd':
