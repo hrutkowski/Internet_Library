@@ -15,6 +15,6 @@ class BookList
     void reserve_book(string author, string title);
     void return_book(string author, string title);
     void add_book(string author, string title, bool taken);
-    friend class BookTXT;
+    auto get_firstBook();
     ~BookList()=default;
 };

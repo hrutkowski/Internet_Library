@@ -21,8 +21,6 @@ class Book
     auto set_taken(bool given_taken);
     auto get_nextBook();
     auto set_nextBook(Book* given_nextBook);
-    friend class BookList;
-    friend class BookTXT;
     ~Book()=default; //d-tor
 
 };

@@ -34,7 +34,7 @@ void BookTXT::update_file(BookList &BooksTXT)
     
     if (outFile.is_open())
     {
-        Book* temp = BooksTXT.firstBook;
+        Book* temp = BooksTXT.get_firstBook();
 
         while (temp)
         {

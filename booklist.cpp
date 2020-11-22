@@ -126,12 +126,17 @@ void BookList::add_book(string author, string title, bool taken)
     {
         Book *temp = firstBook;
 
-        while (temp->nextBook)
+        while (temp->get_nextBook())
         {
-            temp = temp->nextBook;
+            temp = temp->get_nextBook();
         }
 
-        temp->nextBook = newBook;
-        newBook->nextBook = 0;
+        temp->set_nextBook(newBook);
+        newBook->set_nextBook(0);
     }
+}
+
+auto BookList::get_firstBook()
+{
+    return firstBook;
 }
