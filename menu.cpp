@@ -102,12 +102,11 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             break;
 
         case 'q':
-            exit(0);
+            manager.optionQ();
             break;
 
         default:
-            system("clear");
-            mess.showText("This key has no function! Try again ");
+            manager.optionDefault();
             break;
     }
 }
