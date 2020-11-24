@@ -8,40 +8,38 @@
 
 using namespace std;
 
-void BookTXT::load_file(BookList &BooksTXT)
+void BookTXT::load_file(BookList &BooksTXT, const string& file_path)
 {
-    inFile.open("library.txt");
+    BookList book_list;
+    ifstream file(file_path);
     
     string title, author, line;
     bool taken;
 
-    if (inFile.is_open())
+    if (file.is_open())
     {
-        while (getline(inFile, line))
+        while (getline(file, line))
         {
             istringstream iss(line);
             if (!(iss >> author >> title >> taken)) { break; }
             BooksTXT.add_book(author, title, taken);
         }
     }
-
-    inFile.close();
 };
 
-void BookTXT::update_file(BookList &BooksTXT)
+void BookTXT::update_file(BookList &BooksTXT, const string& file_path)
 {
-    outFile.open("library.txt", fstream::out);
+    std::ofstream file(file_path, fstream::out);
     
-    if (outFile.is_open())
+    if (file.is_open())
     {
         Book* temp = BooksTXT.get_firstBook();
 
         while (temp)
         {
-            outFile << temp->get_author() << " " << temp->get_title() 
+            file << temp->get_author() << " " << temp->get_title() 
             << " " << temp->get_taken() << endl;
             temp = temp->get_nextBook();
         }
     }
-    outFile.close();
 };

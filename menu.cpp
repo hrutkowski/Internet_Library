@@ -16,7 +16,7 @@ void Menu::chooseMenu()
     BookTXT FileWorker;
     Messenger mess;
 
-    FileWorker.load_file(Books);
+    FileWorker.load_file(Books, "library.txt");
 
     system("clear");
     mess.showText("Welcome in our amazing library ");
@@ -113,7 +113,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             system("clear");
             mess.showText("Result: ");
             books.reserve_book(buffer1, buffer2);
-            updater.update_file(books);
+            updater.update_file(books, "library.txt");
             sleep(3);
             break;
 
@@ -129,7 +129,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             system("clear");
             mess.showText("Result: ");
             books.return_book(buffer1, buffer2);
-            updater.update_file(books);
+            updater.update_file(books, "library.txt");
             sleep(3);
             break;
 
@@ -148,7 +148,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             buffer3 = choice.boolInput;
             system("clear");
             books.add_book(buffer1, buffer2, buffer3);
-            updater.update_file(books);
+            updater.update_file(books, "library.txt");
             break;
 
         case 'q':
