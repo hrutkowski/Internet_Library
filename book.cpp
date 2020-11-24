@@ -4,15 +4,11 @@
 
 using namespace std;
 
-Book::Book()
-{
-    taken = false;
-}
-
-Book::Book(string title, string author)
+Book::Book(string title, string author, bool taken)
 {
     title = "" ;
     author = "";
+    taken = false;
 }
 
 auto Book::get_title() 

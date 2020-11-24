@@ -11,8 +11,7 @@ class Book
     Book* nextBook;
     
     public:
-    Book();  //c-tor
-    Book(string title, string author);
+    Book(string title, string author, bool taken);
     auto get_title();
     auto set_title(string given_title);
     auto get_author(); 

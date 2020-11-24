@@ -113,7 +113,7 @@ void BookList::return_book(string author, string title)
 
 void BookList::add_book(string author, string title, bool taken)
 {
-    Book *newBook = new Book;
+    Book *newBook = new Book(author, title, taken);
     Messenger mess;
     newBook->set_title(title);
     newBook->set_author(author);
