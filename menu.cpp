@@ -74,7 +74,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
     UserInput choice;
     Messenger mess;
     BookManager manager;
-    string buffer1, buffer2, sentence;
+    string buffer1, buffer2;
     bool buffer3;
 
     choice.receiveInput();
