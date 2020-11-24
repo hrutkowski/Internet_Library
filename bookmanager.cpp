@@ -107,3 +107,17 @@ void BookManager::optionD(BookList &books, BookTXT &updater)
     books.add_book(buffer1, buffer2, buffer3);
     updater.update_file(books, "library.txt");
 }
+
+void BookManager::optionQ()
+{
+    exit(0);
+}
+
+void BookManager::optionDefault()
+{
+    Messenger mess;
+
+    system("clear");
+    mess.showText("This key has no function! Try again! ");
+    sleep(3);
+}

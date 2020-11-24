@@ -14,4 +14,6 @@ class BookManager
     void optionR(BookList &books, BookTXT &updater);
     void optionE(BookList &books, BookTXT &updater);
     void optionD(BookList &books, BookTXT &updater);
+    void optionQ();
+    void optionDefault();
 };
