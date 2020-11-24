@@ -4,10 +4,6 @@
 
 using namespace std;
 
-Book::Book()
-{
-    taken = false;
-}
 
 Book::Book(string title, string author)
 {
@@ -15,41 +11,22 @@ Book::Book(string title, string author)
     author = "";
 }
 
-auto Book::get_title() 
+string Book::title() const
 {
-    return title;
+    return title_;
 }
 
-auto Book::set_title(string given_title)
+string Book::author() const
 {
-    title = given_title;
+    return author_;
 }
 
-auto Book::get_author()
+bool Book::isTaken()
 {
-    return author;
+    return taken_;
 }
 
-auto Book::set_author(string given_author)
+void Book::take()
 {
-    author = given_author;
-}
-
-auto Book::get_taken()
-{
-    return taken;
-}
-
-auto Book::set_taken(bool given_taken)
-{
-    taken = given_taken;
-}
-
-auto Book::get_nextBook() 
-{
-    return nextBook;
-}
-auto Book::set_nextBook(Book* given_nextBook)
-{
-    nextBook = given_nextBook;
+    taken_ = true;
 }

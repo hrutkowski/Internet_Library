@@ -5,9 +5,9 @@ using namespace std;
 
 class Book
 {
-    string title; //book name
-    string author; //book's author
-    bool taken; //state
+    string title_; //book name
+    string author_; //book's author
+    bool taken_; //state
     
 public:
     Book(string title, string author);

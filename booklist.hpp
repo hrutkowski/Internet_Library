@@ -22,7 +22,6 @@ class BookList
 
 public:
     BookList() = default;
-
     BookIt search_by_author(string author);
     BookIt search_by_title(string title);
     void reserv(BookIt);
