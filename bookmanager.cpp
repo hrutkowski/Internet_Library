@@ -1,5 +1,9 @@
 #pragma once
 #include <iostream>
+#include "booklist.hpp"
+#include "book.cpp"
+#include "messenger.cpp"
+#include "userInput.hpp"
 #include "bookmanager.hpp"
 
 void BookManager::optionA(BookList &books)
