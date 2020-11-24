@@ -5,7 +5,8 @@
 
 using namespace std;
 
-void Messenger::showText(string text)
+void Messenger::Log(string text)
 {
-    cout << text << endl;
+    // if (__debug)
+       cout << text << endl;
 }

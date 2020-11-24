@@ -12,6 +12,4 @@ class BookTXT
     public:
     void load_file(BookList &BooksTXT);
     void update_file(BookList &BooksTXT);
-    ifstream inFile;
-    ofstream outFile;
 };

@@ -5,8 +5,56 @@
 #include "userInput.cpp"
 #include "messenger.cpp"
 
+#include <map>
 
 using namespace std;
+/*
+class MyMenu
+{
+
+public:
+    MyMenu()
+    {
+        menuItems_.push_back(std::make_pair("a", SubMenuA()));
+    }
+
+    void run()
+    {
+        showOptions();
+        auto user_input = takeUserInput();
+        runSubMenu(user_input);
+    }
+
+private:
+        void showOptions()
+        {
+            for(auto & item : menuItems_)
+            {
+                std::cout << item.first << " - " << item.second->getName() << "\n";
+            }
+        }
+        std::string  takeUserInput()
+        {
+            getline();;...
+            return ...
+        }
+
+        runSubMenu(const std::string& user_input)
+        {
+            auto it = menuItems_.find(user_input);
+            if(it != menuItems_.end())
+            {
+                it->second->run();
+            }
+        }
+    
+    
+
+private:
+    std::map<std::string, MenuObj> menuItems_;
+};
+*/
+
 
 void Menu::chooseMenu()
 {

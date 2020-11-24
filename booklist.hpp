@@ -1,20 +1,32 @@
 #pragma once
 #include <iostream>
+#include <list>
 #include "book.hpp"
 
 using namespace std;
 
+class BookIt
+{
+    using iterator_type = std::list<Book>::const_iterator;
+    iterator_type iterator_;
+public:
+    BookIt(const iterator_type& it) : iterator_(it) {}
+
+    iterator_type operator->() {return iterator_;}
+    const Book & operator*() {return *iterator_;}
+};
+
 class BookList
 {
-    Book* firstBook;
+    std::list<Book> books_;
 
-    public:
-    BookList();
-    void search_by_author(string author);
-    void search_by_title(string title);
-    void reserve_book(string author, string title);
-    void return_book(string author, string title);
-    void add_book(string author, string title, bool taken);
-    auto get_firstBook();
-    ~BookList()=default;
+public:
+    BookList() = default;
+
+    BookIt search_by_author(string author);
+    BookIt search_by_title(string title);
+    void reserv(BookIt);
+    void ret(BookIt);
+    void add(const Book&);
+    auto begin() {return books_.begin();}
 };
