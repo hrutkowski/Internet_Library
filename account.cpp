@@ -17,6 +17,7 @@ Account::Account(string name, string password)
     name = name;
     password = password;
     generateCardNo(cardnumber);
+    isAdmin = false;
 };
 
 Account::Account(string name, string password, string key)
