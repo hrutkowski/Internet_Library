@@ -61,12 +61,15 @@ void Menu::printLibraryMenu()
 
 void Menu::printAccountMenu()
 {
+    Messenger mess;
+
     system("clear");
-    cout << "Account Menu" << endl;
-    cout << "c - Create a new account" << endl;
-    cout << "r - Remove and existing account" << endl;
-    cout << "e - Edit an existing account" << endl;
-    cout << "d - Display card number" << endl;
+    mess.showText("Account Menu ");
+    mess.showText("c - Create Account ");
+    mess.showText("r - Remove Account ");
+    mess.showText("e - Edit Account Information ");
+    mess.showText("d - Display Card Number");
+    mess.showText("q - Quit");
 };
 
 void Menu::switchLibraryMenu(BookList &books, BookTXT &updater) 
@@ -124,81 +127,67 @@ void Menu::switchAccountMenu(AccountList &accountList)
     {
         case 'c':
             system("clear");
-            message = "Name?";
-            mess.showText(message);
+            mess.showText("Name?");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
-            message = "Password?";
-            mess.showText(message);
+            mess.showText("Password?");
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             accountList.createAccount(buffer1, buffer2);
-            message = "Account created! Press any button to continue.";
-            mess.showText(message);
+            mess.showText("Account created! Press any button to continue");
             cin.get();
             cin.get();
             break;
         case 'r':
             system("clear");
-            message = "Name?";
-            mess.showText(message);
+            mess.showText("Name?");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
-            message = "Password?";
-            mess.showText(message);
+            mess.showText("Password?");
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             accountList.removeAccount(buffer1, buffer2);
-            message = "Account removed! Press any button to continue.";
-            mess.showText(message);
+            mess.showText("Account removed! Press any button to continue");
             cin.get();
             cin.get();
             break;
         case 'e':
             system("clear");
-            message = "Name?";
-            mess.showText(message);
+            mess.showText("Name?");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
             if (accountList.findAccount(buffer1) == true)
             {
-                message = "What would you like to do?\n p - change password\n n - change name\n";
-                mess.showText(message);
+                mess.showText("What would you like to do?\n p - change password\n n - change name\n");
                 choice.receiveInput();
                 switch(choice.input)
                     case 'p':
-                    message = "Old password?";
-                    mess.showText(message);
+                    mess.showText("Old password?");
                     choice.receiveStringInput();
                     buffer1 = choice.stringInput;
-                    message = "New password?";
-                    mess.showText(message);
+                    mess.showText("New password?");
                     choice.receiveStringInput();
                     buffer2 = choice.stringInput;
                     accountList.editAccount(buffer1, buffer2);
                     case 'n':
-                    message = "New name?";
-                    mess.showText(message);
+                    mess.showText("Name?");
                     choice.receiveStringInput();
                     buffer2 = choice.stringInput;
                     accountList.editAccount(buffer1, buffer2);
             }
-            message = "Edit succesful. Press any button to continue.";
-            mess.showText(message);
+            mess.showText("Edit successful. Press any button to continue");
             cin.get();
             cin.get();
             break;
         case 'd':
             system("clear");
-            message = "Name?";
-            mess.showText(message);
+            mess.showText("Name?");
             choice.receiveStringInput();
             buffer1 = choice.stringInput;
             if (accountList.findAccount(buffer1) == true)
             {
                 system("clear");
-                message = "Password?";
-                mess.showText(message);
+                mess.showText("Password?");
                 choice.receiveStringInput();
                 buffer2 = choice.stringInput;
                 accountList.displayCardNumber(buffer1, buffer2);

@@ -8,7 +8,7 @@ using namespace std;
 
 AccountList::AccountList()
 {
-    firstAccount = 0;
+    firstAccount=0;
 }
 
 void AccountList::createAccount(string name, string password)
@@ -80,16 +80,16 @@ void AccountList::editAccount(string old, string change)
 void AccountList::displayCardNumber(string name, string password)
 {
   Account *temp = firstAccount;
-  vector<int> cardnumber;
+  vector<int> cardno;
 
     while (temp)
     {
     if (name == temp->getName() && password == temp->getPassword())
         {
-            cardnumber = temp->getCardNo();
+            cardno = temp->getCardNo();
             for (int i=0; i<10; i++)
             {
-                cout << cardnumber[i];
+                cout << cardno[i];
                 if (i==9) cout << endl;
             };
             temp = temp->nextAccount;

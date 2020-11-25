@@ -14,6 +14,7 @@ private:
     bool isAdmin;
 public:
     Account();
+    ~Account();
     Account(string name, string password);
     Account(string name, string password, string key);
     Account *nextAccount;
