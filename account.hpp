@@ -16,8 +16,6 @@ public:
     Account();
     Account(string name, string password);
     Account(string name, string password, string key);
-    Account *nextAccount;
-    void generateCardNo(vector<int> cardnumber);
     vector<int> getCardNo();
     string getName();
     string getPassword();

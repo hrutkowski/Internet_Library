@@ -12,20 +12,28 @@ Account::Account()
     isAdmin = false;
 };
 
-Account::Account(string name, string password)
+Account::Account(string newname, string newpassword)
 {
-    name = name;
-    password = password;
-    generateCardNo(cardnumber);
+    name = newname;
+    password = newpassword;
+    for (int i=0; i<10; i++)
+    {
+        auto x = rand()%10;
+        cardnumber.push_back(x);
+    };
     isAdmin = false;
 };
 
-Account::Account(string name, string password, string key)
+Account::Account(string newname, string newpassword, string newkey)
 {
-    name = name;
-    password = password;
-    generateCardNo(cardnumber);
-    if (key == "iamadmin") isAdmin = true;
+    name = newname;
+    password = newpassword;
+    for (int i=0; i<10; i++)
+    {
+        auto x = rand()%10;
+        cardnumber.push_back(x);
+    };
+    if (newkey == "iamadmin") isAdmin = true;
     else 
     {
         isAdmin = false;
@@ -57,12 +65,3 @@ void Account::setPassword(string newPassword)
 {
     password = newPassword;
 };
-
-void Account::generateCardNo(vector<int> cardnumber)
-{
-    for (int i=0; i<10; i++)
-    {
-        auto x = rand()%10;
-        cardnumber.push_back(x);
-    };
-}

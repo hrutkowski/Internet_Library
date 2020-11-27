@@ -8,7 +8,6 @@ using namespace std;
 
 AccountList::AccountList()
 {
-    accountList.clear();
 };
 
 void AccountList::createAccount(string name, string password)
@@ -26,19 +25,18 @@ void AccountList::createAdmin(string name, string password, string key)
 
 void AccountList::removeAccount(string name, string password) 
 {
-    for (int i=0; i==sizeof(accountList); i++)
+    for (int i=0; i<accountList.size(); i++)
     {
-        if (accountList[i].getName()== name && accountList[i].getPassword() == password)
+        if (accountList[i].getName() == name && accountList[i].getPassword() == password)
         {
             accountList.erase(accountList.begin()+i);
-            cout<<"success"<<endl;
         };
     };
 };
 
 void AccountList::editAccount(string old, string change)
 {
-    for (int i=0; i==sizeof(accountList); i++)
+    for (int i=0; i<accountList.size(); i++)
     {
         if (accountList[i].getName() == old)
         {
@@ -53,20 +51,27 @@ void AccountList::editAccount(string old, string change)
 
 void AccountList::displayAccounts()
 {
-    for (int i=0; i==sizeof(accountList); i++)
+    for (int i=0; i<accountList.size(); i++)
     {
-       cout << "Name: " << accountList[i].getName() << "Password:" << accountList[i].getPassword() << endl; 
+       cout << "Name: " << accountList[i].getName() << endl;
+       cout << "Password:" << accountList[i].getPassword() << endl; 
     };
 };
 
 void AccountList::displayCardNumber(string name, string password)
 {
-    for (int i=0; i==sizeof(accountList); i++)
+    vector<int> cardno;
+
+    for (int i=0; i<accountList.size(); i++)
     {
-        if (accountList[i].getName()== name && accountList[i].getPassword() == password)
+        if (accountList[i].getName() == name && accountList[i].getPassword() == password)
         {
-            accountList[i].getCardNo();
-        };
+            cardno = accountList[i].getCardNo();
+            for (int i=0; i<cardno.size(); i++)
+            {
+                cout << cardno[i];
+            }
+        }
     };
   
 };
