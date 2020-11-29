@@ -6,6 +6,13 @@
 
 using namespace std;
 
+void BookList::add(const Book& book)
+{
+    books_.push_back(book);
+}
+
+
+/*
 BookList::BookList()
 {
     firstBook = 0;
@@ -140,3 +147,4 @@ auto BookList::get_firstBook()
 {
     return firstBook;
 }
+*/
