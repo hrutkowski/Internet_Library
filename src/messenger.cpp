@@ -7,5 +7,6 @@ using namespace std;
 
 void Messenger::showText(string text)
 {
+    // if (__debug)
     cout << text << endl;
 }

@@ -5,21 +5,16 @@ using namespace std;
 
 class Book
 {
-    string title; //book name
-    string author; //book's author
-    bool taken; //state
-    Book* nextBook;
+    string title_; //book name
+    string author_; //book's author
+    bool taken_; //state
     
-    public:
-    Book(string title, string author, bool taken);
-    auto get_title();
-    auto set_title(string given_title);
-    auto get_author(); 
-    auto set_author(string given_author);
-    auto get_taken(); 
-    auto set_taken(bool given_taken);
-    auto get_nextBook();
-    auto set_nextBook(Book* given_nextBook);
-    ~Book()=default; //d-tor
+public:
+    Book(string title, string author);
+    std::string title() const;
+    std::string author() const; 
+    bool isTaken(); 
+    void take();
+    void retr();
 
 };

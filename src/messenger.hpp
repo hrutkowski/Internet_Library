@@ -6,7 +6,6 @@ using namespace std;
 
 class Messenger
 {
-    public:
-    Messenger()=default;
-    void showText(string text);
+public:
+    static void showText(string text);
 };

@@ -1,20 +1,21 @@
 #pragma once
 #include <iostream>
+#include <list>
 #include "book.hpp"
 
 using namespace std;
 
 class BookList
 {
-    Book* firstBook;
+    list<Book> books_;
 
-    public:
-    BookList();
-    void search_by_author(string author);
-    void search_by_title(string title);
-    void reserve_book(string author, string title);
-    void return_book(string author, string title);
-    void add_book(string author, string title, bool taken);
-    auto get_firstBook();
-    ~BookList()=default;
+public:
+    BookList() = default;
+    vector<list<Book>::iterator> searchAuthor(string);
+    vector<list<Book>::iterator> searchTitle(string);
+    void reserve(list<Book>::iterator);
+    bool findReserve(string, string);
+    void ret(list<Book>::iterator);
+    bool findReturn(string, string);
+    void add(const Book&);
 };
