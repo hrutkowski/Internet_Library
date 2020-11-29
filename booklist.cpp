@@ -37,6 +37,11 @@ vector<list<Book>::iterator> BookList::searchTitle(string title)
     return ptrbooks;
 }
 
+void BookList::reserve(list<Book>::iterator iter)
+{
+    (*iter).take();
+}
+
 /*
 BookList::BookList()
 {

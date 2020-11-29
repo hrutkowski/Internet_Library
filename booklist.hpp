@@ -13,7 +13,7 @@ public:
     BookList() = default;
     vector<list<Book>::iterator> searchAuthor(string author);
     vector<list<Book>::iterator> searchTitle(string title);
-    void reserv(list<Book>::iterator);
+    void reserve(list<Book>::iterator);
     void ret();
     void add(const Book&);
 };
