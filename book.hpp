@@ -15,8 +15,6 @@ public:
     std::string author() const; 
     bool isTaken(); 
     void take();
-
-    void set_taken(bool given_taken);
-
+    void retr();
 
 };
