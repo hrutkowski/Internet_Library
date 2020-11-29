@@ -14,7 +14,8 @@ public:
     vector<list<Book>::iterator> searchAuthor(string);
     vector<list<Book>::iterator> searchTitle(string);
     void reserve(list<Book>::iterator);
-    bool find(string, string);
+    bool findReserve(string, string);
     void ret(list<Book>::iterator);
+    bool findReturn(string, string);
     void add(const Book&);
 };

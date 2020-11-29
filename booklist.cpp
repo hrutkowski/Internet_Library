@@ -42,7 +42,7 @@ void BookList::reserve(list<Book>::iterator iter)
     (*iter).take();
 }
 
-bool BookList::find(string author, string title)
+bool BookList::findReserve(string author, string title)
 {
     for(list<Book>::iterator iter=books_.begin(); iter != books_.end(); iter++)
     {
@@ -58,6 +58,19 @@ bool BookList::find(string author, string title)
 void BookList::ret(list<Book>::iterator iter)
 {
     (*iter).retr();
+}
+
+bool BookList::findReturn(string author, string title)
+{
+    for(list<Book>::iterator iter=books_.begin(); iter != books_.end(); iter++)
+    {
+        if((title == (*iter).title()) && (author == (*iter).author()) && ((*iter).isTaken()==true))
+        {
+            ret(iter);
+            return true;
+        }
+    }
+    return false;
 }
 
 /*

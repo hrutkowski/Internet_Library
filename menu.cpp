@@ -168,7 +168,7 @@ void Menu::switchLibraryMenu(BookList &books)
             buffer2 = choice.stringInput;
             system("clear");
             mess.showText("Result: ");
-            if(books.find(buffer1, buffer2)==true) mess.showText("Success");
+            if(books.findReserve(buffer1, buffer2)==true) mess.showText("Success");
             else mess.showText("Fail");
             //updater.update_file(books);
             sleep(3);
