@@ -11,10 +11,10 @@ class BookList
 
 public:
     BookList() = default;
-    vector<list<Book>::iterator> searchAuthor(string author);
-    vector<list<Book>::iterator> searchTitle(string title);
+    vector<list<Book>::iterator> searchAuthor(string);
+    vector<list<Book>::iterator> searchTitle(string);
     void reserve(list<Book>::iterator);
     bool find(string, string);
-    void ret();
+    void ret(list<Book>::iterator);
     void add(const Book&);
 };
