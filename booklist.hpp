@@ -16,5 +16,4 @@ public:
     void reserv();
     void ret();
     void add(const Book&);
-    auto begin() {return books_.begin();}
 };
