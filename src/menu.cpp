@@ -4,7 +4,6 @@
 #include "menu.hpp"
 #include "userInput.cpp"
 #include "messenger.cpp"
-#include "bookmanager.cpp"
 #include "accountdatabase.cpp"
 
 using namespace std;
@@ -19,7 +18,7 @@ void Menu::chooseMenu()
     AccountDataBase DataBase;
 
     DataBase.loadDatabase(accountList);
-    FileWorker.load_file(Books, "library.txt");
+    //FileWorker.load_file(Books, "library.txt");
 
     system("clear");
     mess.showText("Welcome in our amazing library ");
@@ -41,7 +40,7 @@ void Menu::chooseMenu()
         while (1)
         {
             printLibraryMenu();
-            switchLibraryMenu(Books, FileWorker);
+            switchLibraryMenu(Books);
         }
         break;
     };
@@ -73,11 +72,10 @@ void Menu::printAccountMenu(Messenger &mess)
     mess.showText("q - Quit");
 };
 
-void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
+void Menu::switchLibraryMenu(BookList &books)
 {
     UserInput choice;
     Messenger mess;
-    BookManager manager;
     string buffer1, buffer2;
     bool buffer3;
 
@@ -86,32 +84,94 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
     switch (choice.input)
     {
     case 'a':
-        manager.optionA(books);
-        break;
+            system("clear");
+            mess.showText("Author of a book: ");
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
+            system("clear");
+            mess.showText("Searching results: ");
+            for (int i=0; i < books.searchAuthor(buffer1).size(); i++)
+            {
+                cout << (*books.searchAuthor(buffer1)[i]).author() << " " << (*books.searchAuthor(buffer1)[i]).title()<< " ";
+                if((*books.searchAuthor(buffer1)[i]).isTaken()==true) mess.showText("Taken");
+                else mess.showText("Available");
+            }
+            sleep(3);
+            break;
+        
+        case 't':
+            system("clear");
+            mess.showText("Title of a book: ");
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
+            system("clear");
+            mess.showText("Searching results: ");
+            for (int i=0; i < books.searchTitle(buffer1).size(); i++)
+            {
+                cout << (*books.searchTitle(buffer1)[i]).author() << " " << (*books.searchTitle(buffer1)[i]).title()<< " ";
+                if((*books.searchTitle(buffer1)[i]).isTaken()==true) mess.showText("Taken");
+                else mess.showText("Available");
+            }
+            sleep(3);
+            break;
+        
+        case 'r':
+            system("clear");
+            mess.showText("Author of a book: ");
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
+            system("clear");
+            mess.showText("Title of a book: ");
+            choice.receiveStringInput();
+            buffer2 = choice.stringInput;
+            system("clear");
+            mess.showText("Result: ");
+            if(books.findReserve(buffer1, buffer2)==true) mess.showText("Success");
+            else mess.showText("Fail");
+            //updater.update_file(books);
+            sleep(3);
+            break;
+        
+        case 'e':
+            system("clear");
+            mess.showText("Author of a book: ");
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
+            system("clear");
+            mess.showText("Title of a book: ");
+            choice.receiveStringInput();
+            buffer2 = choice.stringInput;
+            system("clear");
+            mess.showText("Result: ");
+            if(books.findReturn(buffer1, buffer2)==true) mess.showText("Success");
+            else mess.showText("Fail");
+            //updater.update_file(books);
+            sleep(3);
+            break;
+        
+        case 'd':
+            system("clear");
+            mess.showText("Type surname of the author of a book (if space use floor '_'): ");
+            choice.receiveStringInput();
+            buffer1 = choice.stringInput;
+            system("clear");
+            mess.showText("Type the title of a book (if space use floor '_'): ");
+            choice.receiveStringInput();
+            buffer2 = choice.stringInput;
+            system("clear");
+            books.add(Book(buffer2, buffer1));
+            //updater.update_file(books);
+            break;
 
-    case 't':
-        manager.optionT(books);
-        break;
+        case 'q':
+            exit(0);
+            break;
 
-    case 'r':
-        manager.optionR(books, updater);
-        break;
-
-    case 'e':
-        manager.optionE(books, updater);
-        break;
-
-    case 'd':
-        manager.optionD(books, updater);
-        break;
-
-    case 'q':
-        manager.optionQ();
-        break;
-
-    default:
-        manager.optionDefault();
-        break;
+        default:
+            system("clear");
+            mess.showText("This key has no function! Try again ");
+            sleep(3);
+            break;
     }
 }
 

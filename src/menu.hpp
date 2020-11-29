@@ -14,6 +14,6 @@ public:
     void chooseMenu();
     void printLibraryMenu();
     void printAccountMenu(Messenger &mess);
-    void switchLibraryMenu(BookList &Books, BookTXT &Booker); //do argumentu tej funkcji przekażemy listę książek, żeby wywoływała operacje na książkach
+    void switchLibraryMenu(BookList &Books); 
     void switchAccountMenu(AccountList &List,AccountDataBase &DataBase, Messenger &mess, UserInput &choice);
 };
