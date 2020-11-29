@@ -54,7 +54,7 @@ void AccountList::displayAccounts()
     for (int i=0; i<accountList.size(); i++)
     {
        cout << "Name: " << accountList[i].getName() << endl;
-       cout << "Password:" << accountList[i].getPassword() << endl; 
+       cout << "Password: " << accountList[i].getPassword() << endl; 
     };
 };
 
