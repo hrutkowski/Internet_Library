@@ -61,10 +61,7 @@ void Menu::chooseMenu()
     UserInput choice;
     AccountList List;
     BookList Books;
-    BookTXT FileWorker;
     Messenger mess;
-
-    FileWorker.load_file(Books);
 
     system("clear");
     mess.showText("Welcome in our amazing library ");
@@ -86,7 +83,7 @@ void Menu::chooseMenu()
             while(1)
             {
             printLibraryMenu();
-            switchLibraryMenu(Books, FileWorker);
+            switchLibraryMenu(Books);
             }
             break;
     };  
@@ -116,7 +113,7 @@ void Menu::printAccountMenu()
     cout << "d - Display card number" << endl;
 };
 
-void Menu::switchLibraryMenu(BookList &books, BookTXT &updater) 
+void Menu::switchLibraryMenu(BookList &books) 
 {
     UserInput choice;
     Messenger mess;
