@@ -12,13 +12,13 @@ using namespace std;
 void Menu::chooseMenu()
 {
     UserInput choice;
-    AccountList List;
+    AccountList accountList;
     BookList Books;
     BookTXT FileWorker;
     Messenger mess;
     AccountDataBase DataBase;
 
-    DataBase.loadDatabase(List);
+    DataBase.loadDatabase(accountList);
     FileWorker.load_file(Books, "library.txt");
 
     system("clear");
@@ -33,8 +33,8 @@ void Menu::chooseMenu()
     case 'a':
         for (;;)
         {
-            printAccountMenu();
-            switchAccountMenu(List);
+            printAccountMenu(mess);
+            switchAccountMenu(accountList, DataBase, mess, choice);
         };
         break;
     case 'l':
@@ -61,10 +61,8 @@ void Menu::printLibraryMenu()
     mess.showText("q - Exit");
 }
 
-void Menu::printAccountMenu()
+void Menu::printAccountMenu(Messenger &mess)
 {
-    Messenger mess;
-
     system("clear");
     mess.showText("Account Menu ");
     mess.showText("c - Create Account ");
@@ -117,10 +115,8 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
     }
 }
 
-void Menu::switchAccountMenu(AccountList &accountList)
+void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase, Messenger &mess, UserInput &choice)
 {
-    UserInput choice;
-    Messenger mess;
     string buffer1, buffer2;
     string message;
 
@@ -137,6 +133,7 @@ void Menu::switchAccountMenu(AccountList &accountList)
         choice.receiveStringInput();
         buffer2 = choice.stringInput;
         accountList.createAccount(buffer1, buffer2);
+        DataBase.saveDataBase(accountList);
         mess.showText("Account created! Press any button to continue");
         cin.get();
         cin.get();
@@ -151,6 +148,7 @@ void Menu::switchAccountMenu(AccountList &accountList)
         buffer2 = choice.stringInput;
         accountList.removeAccount(buffer1, buffer2);
         mess.showText("Account removed! Press any button to continue");
+        DataBase.saveDataBase(accountList);
         cin.get();
         cin.get();
         break;
@@ -167,12 +165,15 @@ void Menu::switchAccountMenu(AccountList &accountList)
         choice.receiveStringInput();
         buffer2 = choice.stringInput;
         accountList.editAccount(buffer1, buffer2);
+        mess.showText("Edit successful. Press any button to continue");
+        DataBase.saveDataBase(accountList);
         case 'n':
         mess.showText("Name?");
         choice.receiveStringInput();
         buffer2 = choice.stringInput;
         accountList.editAccount(buffer1, buffer2);
         mess.showText("Edit successful. Press any button to continue");
+        DataBase.saveDataBase(accountList);
         cin.get();
         cin.get();
         break;

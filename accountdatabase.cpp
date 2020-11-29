@@ -5,6 +5,11 @@
 #include <sstream>
 #include "accountdatabase.hpp"
 
+AccountDataBase::AccountDataBase()
+{
+
+};
+
 void AccountDataBase::saveDataBase(AccountList &List)
 {
     outFile.open("AccountDataBase.txt");
