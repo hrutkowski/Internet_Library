@@ -173,7 +173,7 @@ void Menu::switchLibraryMenu(BookList &books)
             //updater.update_file(books);
             sleep(3);
             break;
-        /*
+        
         case 'e':
             system("clear");
             mess.showText("Author of a book: ");
@@ -185,11 +185,12 @@ void Menu::switchLibraryMenu(BookList &books)
             buffer2 = choice.stringInput;
             system("clear");
             mess.showText("Result: ");
-            books.return_book(buffer1, buffer2);
-            updater.update_file(books);
+            if(books.findReturn(buffer1, buffer2)==true) mess.showText("Success");
+            else mess.showText("Fail");
+            //updater.update_file(books);
             sleep(3);
             break;
-        */
+        
         case 'd':
             system("clear");
             mess.showText("Type surname of the author of a book (if space use floor '_'): ");
