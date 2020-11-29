@@ -140,7 +140,7 @@ void Menu::switchLibraryMenu(BookList &books)
             }
             sleep(3);
             break;
-        /*
+        
         case 't':
             system("clear");
             mess.showText("Title of a book: ");
@@ -148,10 +148,15 @@ void Menu::switchLibraryMenu(BookList &books)
             buffer1 = choice.stringInput;
             system("clear");
             mess.showText("Searching results: ");
-            books.search_by_title(buffer1);
+            for (int i=0; i < books.searchTitle(buffer1).size(); i++)
+            {
+                cout << (*books.searchTitle(buffer1)[i]).author() << " " << (*books.searchTitle(buffer1)[i]).title()<< " ";
+                if((*books.searchTitle(buffer1)[i]).isTaken()==true) mess.showText("Taken");
+                else mess.showText("Available");
+            }
             sleep(3);
             break;
-
+        /*
         case 'r':
             system("clear");
             mess.showText("Author of a book: ");

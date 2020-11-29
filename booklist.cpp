@@ -24,7 +24,7 @@ vector<list<Book>::iterator> BookList::searchAuthor(string author)
     return ptrbooks;
 }
 
-vector<list<Book>::iterator> BookList::searchAuthor(string title)
+vector<list<Book>::iterator> BookList::searchTitle(string title)
 {
     vector<list<Book>::iterator> ptrbooks;
     for(list<Book>::iterator iter=books_.begin(); iter != books_.end(); iter++)
