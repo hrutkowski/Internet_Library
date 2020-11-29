@@ -124,7 +124,7 @@ void Menu::switchLibraryMenu(BookList &books)
 
     switch(choice.input)
     {
-        /*
+        
         case 'a':
             system("clear");
             mess.showText("Author of a book: ");
@@ -132,10 +132,15 @@ void Menu::switchLibraryMenu(BookList &books)
             buffer1 = choice.stringInput;
             system("clear");
             mess.showText("Searching results: ");
-            books.search_by_author(buffer1);
+            for (int i=0; i < books.searchAuthor(buffer1).size(); i++)
+            {
+                cout << (*books.searchAuthor(buffer1)[i]).author() << " " << (*books.searchAuthor(buffer1)[i]).title()<< " ";
+                if((*books.searchAuthor(buffer1)[i]).isTaken()==true) mess.showText("Taken");
+                else mess.showText("Available");
+            }
             sleep(3);
             break;
-
+        /*
         case 't':
             system("clear");
             mess.showText("Title of a book: ");
@@ -178,7 +183,7 @@ void Menu::switchLibraryMenu(BookList &books)
             updater.update_file(books);
             sleep(3);
             break;
-
+        */
         case 'd':
             system("clear");
             mess.showText("Type surname of the author of a book (if space use floor '_'): ");
@@ -189,12 +194,8 @@ void Menu::switchLibraryMenu(BookList &books)
             choice.receiveStringInput();
             buffer2 = choice.stringInput;
             system("clear");
-            mess.showText("Type 1 if taken and 0 if available: ");
-            choice.receiveBoolInput();
-            buffer3 = choice.boolInput;
-            system("clear");
-            books.add_book(buffer1, buffer2, buffer3);
-            updater.update_file(books);
+            books.add(Book(buffer2, buffer1));
+            //updater.update_file(books);
             break;
 
         case 'q':
@@ -204,8 +205,8 @@ void Menu::switchLibraryMenu(BookList &books)
         default:
             system("clear");
             mess.showText("This key has no function! Try again ");
+            sleep(3);
             break;
-        */
     }
 }
 
