@@ -3,15 +3,14 @@
 #include <cstring>
 #include <fstream>
 #include <sstream>
-#include "account.cpp"
+#include "accountlist.cpp"
 
-class AccountDataBase
+struct AccountDataBase
 {
-    public:
     AccountDataBase();
-    void loadDatabase();
-    void saveDataBase();
-    void eraseDataBase();
+    void loadDatabase(AccountList &List);
+    void saveDataBase(AccountList &List);
+    void eraseDataBase(AccountList &List);
     ifstream inFile;
     ofstream outFile;
 };

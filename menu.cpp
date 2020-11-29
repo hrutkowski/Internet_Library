@@ -5,6 +5,7 @@
 #include "userInput.cpp"
 #include "messenger.cpp"
 #include "bookmanager.cpp"
+#include "accountdatabase.cpp"
 
 using namespace std;
 
@@ -15,7 +16,9 @@ void Menu::chooseMenu()
     BookList Books;
     BookTXT FileWorker;
     Messenger mess;
+    AccountDataBase DataBase;
 
+    DataBase.loadDatabase(List);
     FileWorker.load_file(Books, "library.txt");
 
     system("clear");
@@ -123,7 +126,7 @@ void Menu::switchAccountMenu(AccountList &accountList)
 
     choice.receiveInput();
 
-    switch (choice.input) //todo: add findaccount check before each function
+    switch (choice.input) 
     {
     case 'c':
         system("clear");
