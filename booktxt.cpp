@@ -8,6 +8,7 @@
 
 using namespace std;
 
+/*
 BookList BookTXT::load_file(const std::string& file_path)
 {
     BookList book_list;
@@ -40,3 +41,4 @@ void BookTXT::update_file(const std::string& file_path, const BookList &BooksTXT
         }
     }
 };
+*/

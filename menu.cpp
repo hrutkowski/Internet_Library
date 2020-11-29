@@ -127,6 +127,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
 
     switch(choice.input)
     {
+        /*
         case 'a':
             system("clear");
             mess.showText("Author of a book: ");
@@ -207,6 +208,7 @@ void Menu::switchLibraryMenu(BookList &books, BookTXT &updater)
             system("clear");
             mess.showText("This key has no function! Try again ");
             break;
+        */
     }
 }
 
