@@ -51,8 +51,8 @@ bool BookList::find(string author, string title)
             reserve(iter);
             return 0;
         }
-        return 1;
     }
+    return 1;
 }
 
 /*
