@@ -55,6 +55,11 @@ bool BookList::find(string author, string title)
     return false;
 }
 
+void BookList::ret(list<Book>::iterator iter)
+{
+    (*iter).retr();
+}
+
 /*
 BookList::BookList()
 {
