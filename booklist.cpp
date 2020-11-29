@@ -11,7 +11,18 @@ void BookList::add(const Book& book)
     books_.push_back(book);
 }
 
-
+vector<list<Book>::iterator> BookList::searchAuthor(string author)
+{
+    vector<list<Book>::iterator> ptrbooks;
+    for(list<Book>::iterator iter=books_.begin(); iter != books_.end(); iter++)
+    {
+        if(author == (*iter).author())
+        {
+            ptrbooks.push_back(iter);
+        }
+    }
+    return ptrbooks;
+}
 /*
 BookList::BookList()
 {
