@@ -49,10 +49,10 @@ bool BookList::find(string author, string title)
         if((title == (*iter).title()) && (author == (*iter).author()) && ((*iter).isTaken()==false))
         {
             reserve(iter);
-            return 0;
+            return true;
         }
     }
-    return 1;
+    return false;
 }
 
 /*
