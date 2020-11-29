@@ -5,6 +5,7 @@
 #include "booklist.cpp"
 #include "booktxt.cpp"
 #include "messenger.cpp"
+#include "userInput.cpp"
 
 using namespace std;
 
