@@ -7,13 +7,13 @@ using namespace std;
 
 class BookList
 {
-    std::list<Book> books_;
+    list<Book> books_;
 
 public:
     BookList() = default;
     vector<list<Book>::iterator> searchAuthor(string author);
     vector<list<Book>::iterator> searchTitle(string title);
-    void reserv();
+    void reserv(list<Book>::iterator);
     void ret();
     void add(const Book&);
 };
