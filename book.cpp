@@ -7,8 +7,9 @@ using namespace std;
 
 Book::Book(string title, string author)
 {
-    title = "" ;
-    author = "";
+    title_ = title ;
+    author_ = author;
+    taken_ = false;
 }
 
 string Book::title() const
@@ -29,4 +30,9 @@ bool Book::isTaken()
 void Book::take()
 {
     taken_ = true;
+}
+
+void Book::retr()
+{
+    taken_ = false;
 }
