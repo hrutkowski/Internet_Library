@@ -31,17 +31,18 @@ BookList BookTXT::load(const std::string& file_path)
     return book_list;
 }
 
-/*
-void BookTXT::update_file(const std::string& file_path, const BookList &BooksTXT)
+
+void BookTXT::update(const std::string& file_path, BookList &books)
 {
     std::ofstream file(file_path, fstream::out);
-    
+    list<Book>::const_iterator iter;
+
     if (file.is_open())
     {
-        for(auto & book : BooksTXT)
+        for(list<Book>::const_iterator iter=books.listGet().begin(); iter != books.listGet().end(); iter++)
         {
-            file << book << std::endl;
+            file << (*iter).author() << " " << (*iter).title() << " " << (*iter).isTaken() << endl;
         }
-    }
+    }    
 };
-*/
+

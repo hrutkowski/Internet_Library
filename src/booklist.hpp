@@ -19,4 +19,5 @@ public:
     void ret(list<Book>::iterator);
     bool findReturn(string, string);
     void add(const Book&);
+    list<Book>& listGet();
 };

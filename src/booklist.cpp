@@ -72,3 +72,8 @@ bool BookList::findReturn(string author, string title)
     }
     return false;
 }
+
+list<Book>& BookList::listGet()
+{
+    return books_;
+}

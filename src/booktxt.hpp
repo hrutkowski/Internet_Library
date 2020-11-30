@@ -11,5 +11,5 @@ class BookTXT
 {
     public:
     BookList load(const std::string&);
-    void update_file(BookList &BooksTXT);
+    void update(const std::string&, BookList &);
 };
