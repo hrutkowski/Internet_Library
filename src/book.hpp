@@ -10,8 +10,8 @@ class Book
     bool taken_; //state
     
 public:
-    Book(string title, string author);
-    Book(string title, string author, bool taken);
+    Book(string, string);
+    Book(string, string, bool);
     std::string title() const;
     std::string author() const; 
     bool isTaken() const; 

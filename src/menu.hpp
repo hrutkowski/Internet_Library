@@ -15,6 +15,6 @@ public:
     void chooseMenu();
     void printLibraryMenu();
     void printAccountMenu(Messenger &mess);
-    void switchLibraryMenu(BookList &Books); 
+    void switchLibraryMenu(BookList &); 
     void switchAccountMenu(AccountList &List,AccountDataBase &DataBase, Messenger &mess, UserInput &choice);
 };
