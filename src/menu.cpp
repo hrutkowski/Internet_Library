@@ -75,6 +75,7 @@ void Menu::printAccountMenu(Messenger &mess)
 void Menu::switchLibraryMenu(BookList &books)
 {
     UserInput choice;
+    BookTXT updater;
     Messenger mess;
     string buffer1, buffer2;
     bool buffer3;
@@ -128,7 +129,7 @@ void Menu::switchLibraryMenu(BookList &books)
             mess.showText("Result: ");
             if(books.findReserve(buffer1, buffer2)==true) mess.showText("Success");
             else mess.showText("Fail");
-            //updater.update_file(books);
+            updater.update("library.txt", books);
             sleep(3);
             break;
         
@@ -145,7 +146,7 @@ void Menu::switchLibraryMenu(BookList &books)
             mess.showText("Result: ");
             if(books.findReturn(buffer1, buffer2)==true) mess.showText("Success");
             else mess.showText("Fail");
-            //updater.update_file(books);
+            updater.update("library.txt", books);
             sleep(3);
             break;
         
@@ -160,7 +161,7 @@ void Menu::switchLibraryMenu(BookList &books)
             buffer2 = choice.stringInput;
             system("clear");
             books.add(Book(buffer2, buffer1));
-            //updater.update_file(books);
+            updater.update("library.txt", books);
             break;
 
         case 'q':
