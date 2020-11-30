@@ -12,6 +12,13 @@ Book::Book(string title, string author)
     taken_ = false;
 }
 
+Book::Book(string title, string author, bool taken)
+{
+    title_ = title ;
+    author_ = author;
+    taken_ = taken;
+}
+
 string Book::title() const
 {
     return title_;

@@ -11,6 +11,7 @@ class Book
     
 public:
     Book(string title, string author);
+    Book(string title, string author, bool taken);
     std::string title() const;
     std::string author() const; 
     bool isTaken(); 
