@@ -29,7 +29,7 @@ string Book::author() const
     return author_;
 }
 
-bool Book::isTaken()
+bool Book::isTaken() const
 {
     return taken_;
 }
