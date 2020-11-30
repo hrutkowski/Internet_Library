@@ -38,8 +38,3 @@ void AccountDataBase::loadDatabase(AccountList &List)
     inFile.close();
 };
 
-void AccountDataBase::eraseDataBase(AccountList &List)
-{
-    outFile.open("AccountDataBase.txt");
-    outFile.close();
-};
