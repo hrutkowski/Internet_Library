@@ -218,6 +218,7 @@ void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase
         mess.showText("What would you like to do?\n p - change password\n n - change name\n");
         choice.receiveInput();
         switch (choice.input)
+        {
         case 'p':
         mess.showText("Old password?");
         choice.receiveStringInput();
@@ -228,8 +229,14 @@ void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase
         accountList.editAccount(buffer1, buffer2);
         mess.showText("Edit successful. Press any button to continue");
         DataBase.saveDataBase(accountList);
+        cin.get();
+        cin.get();
+        break;
         case 'n':
-        mess.showText("Name?");
+        mess.showText("Old name?");
+        choice.receiveStringInput();
+        buffer1 = choice.stringInput;
+        mess.showText("New name?");
         choice.receiveStringInput();
         buffer2 = choice.stringInput;
         accountList.editAccount(buffer1, buffer2);
@@ -237,6 +244,8 @@ void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase
         DataBase.saveDataBase(accountList);
         cin.get();
         cin.get();
+        break;
+        };
         break;
     case 'd':
         system("clear");
