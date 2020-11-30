@@ -18,7 +18,7 @@ void Menu::chooseMenu()
     AccountDataBase DataBase;
 
     DataBase.loadDatabase(accountList);
-    //FileWorker.load_file(Books, "library.txt");
+    Books = FileWorker.load("library.txt");
 
     system("clear");
     mess.showText("Welcome in our amazing library ");

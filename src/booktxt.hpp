@@ -10,6 +10,6 @@ using namespace std;
 class BookTXT
 {
     public:
-    void load_file(BookList &BooksTXT);
+    BookList load(const std::string&);
     void update_file(BookList &BooksTXT);
 };
