@@ -25,8 +25,6 @@ void Menu::chooseMenu()
     mess.showText("l - go to library menu ");
     mess.showText("a - go to account menu ");
 
-    choice.receiveInput();
-
     switch (choice.receiveInput())
     {
     case 'a':
