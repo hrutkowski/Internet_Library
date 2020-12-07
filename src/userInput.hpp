@@ -7,11 +7,8 @@ using namespace std;
 class UserInput
 {
 public:
-    char input;
-    string stringInput;
-    bool boolInput;
     UserInput();
-    void receiveInput();
-    void receiveStringInput();
-    void receiveBoolInput();
+    char receiveInput();
+    string receiveStringInput();
+    bool receiveBoolInput();
 };
