@@ -6,17 +6,15 @@ using namespace std;
 
 
 Book::Book(string title, string author)
+: title_(title), author_(author)
 {
-    title_ = title ;
-    author_ = author;
     taken_ = false;
 }
 
 Book::Book(string title, string author, bool taken)
+: title_(title), author_(author), taken_(taken)
 {
-    title_ = title ;
-    author_ = author;
-    taken_ = taken;
+
 }
 
 string Book::title() const
