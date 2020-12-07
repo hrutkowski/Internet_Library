@@ -5,8 +5,6 @@
 #include "book.hpp"
 
 using namespace std;
-using BookItVector = vector<list<Book>::iterator>;
-using BookIt = list<Book>::iterator;
 
 class BookList
 {
@@ -14,11 +12,11 @@ class BookList
 
 public:
     BookList() = default;
-    BookItVector searchAuthor(string);
-    BookItVector searchTitle(string);
-    void reserve(BookIt);
+    vector<list<Book>::iterator> searchAuthor(string);
+    vector<list<Book>::iterator> searchTitle(string);
+    void reserve(list<Book>::iterator);
     bool findReserve(string, string);
-    void ret(BookIt);
+    void ret(list<Book>::iterator);
     bool findReturn(string, string);
     void add(const Book&);
     list<Book>& listGet();

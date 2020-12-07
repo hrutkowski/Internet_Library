@@ -7,22 +7,25 @@ using namespace std;
 
 UserInput::UserInput()
 {
-    input = 0;
-    stringInput = " ";
-    boolInput = false;
 };
 
-void UserInput::receiveInput()
+char UserInput::receiveInput()
 {
+    char input;
     cin >> input;
+    return input;
 };
 
-void UserInput::receiveStringInput()
+string UserInput::receiveStringInput()
 {
-    cin >> stringInput;
-}
+    string input;
+    cin >> input;
+    return input;
+};
 
-void UserInput::receiveBoolInput()
+bool UserInput::receiveBoolInput()
 {
-    cin >> boolInput;
+    bool input;
+    cin >> input;
+    return input;
 }

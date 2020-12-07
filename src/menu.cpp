@@ -27,7 +27,7 @@ void Menu::chooseMenu()
 
     choice.receiveInput();
 
-    switch (choice.input)
+    switch (choice.receiveInput())
     {
     case 'a':
         for (;;)
@@ -80,15 +80,13 @@ void Menu::switchLibraryMenu(BookList &books)
     string buffer1, buffer2;
     bool buffer3;
 
-    choice.receiveInput();
 
-    switch (choice.input)
+    switch (choice.receiveInput())
     {
     case 'a':
             system("clear");
             mess.showText("Author of a book: ");
-            choice.receiveStringInput();
-            buffer1 = choice.stringInput;
+            buffer1 = choice.receiveStringInput();
             system("clear");
             mess.showText("Searching results: ");
             for (int i=0; i < books.searchAuthor(buffer1).size(); i++)
@@ -103,8 +101,7 @@ void Menu::switchLibraryMenu(BookList &books)
         case 't':
             system("clear");
             mess.showText("Title of a book: ");
-            choice.receiveStringInput();
-            buffer1 = choice.stringInput;
+            buffer1 = choice.receiveStringInput();
             system("clear");
             mess.showText("Searching results: ");
             for (int i=0; i < books.searchTitle(buffer1).size(); i++)
@@ -119,12 +116,10 @@ void Menu::switchLibraryMenu(BookList &books)
         case 'r':
             system("clear");
             mess.showText("Author of a book: ");
-            choice.receiveStringInput();
-            buffer1 = choice.stringInput;
+            buffer1 = choice.receiveStringInput();
             system("clear");
             mess.showText("Title of a book: ");
-            choice.receiveStringInput();
-            buffer2 = choice.stringInput;
+            buffer2 = choice.receiveStringInput();
             system("clear");
             mess.showText("Result: ");
             if(books.findReserve(buffer1, buffer2)==true) mess.showText("Success");
@@ -136,12 +131,10 @@ void Menu::switchLibraryMenu(BookList &books)
         case 'e':
             system("clear");
             mess.showText("Author of a book: ");
-            choice.receiveStringInput();
-            buffer1 = choice.stringInput;
+            buffer1 = choice.receiveStringInput();
             system("clear");
             mess.showText("Title of a book: ");
-            choice.receiveStringInput();
-            buffer2 = choice.stringInput;
+            buffer2 = choice.receiveStringInput();
             system("clear");
             mess.showText("Result: ");
             if(books.findReturn(buffer1, buffer2)==true) mess.showText("Success");
@@ -153,12 +146,10 @@ void Menu::switchLibraryMenu(BookList &books)
         case 'd':
             system("clear");
             mess.showText("Type surname of the author of a book (if space use floor '_'): ");
-            choice.receiveStringInput();
-            buffer1 = choice.stringInput;
+            buffer1 = choice.receiveStringInput();
             system("clear");
             mess.showText("Type the title of a book (if space use floor '_'): ");
-            choice.receiveStringInput();
-            buffer2 = choice.stringInput;
+            buffer2 = choice.receiveStringInput();
             system("clear");
             books.add(Book(buffer2, buffer1));
             updater.update("library.txt", books);
@@ -181,18 +172,14 @@ void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase
     string buffer1, buffer2;
     string message;
 
-    choice.receiveInput();
-
-    switch (choice.input) 
+    switch (choice.receiveInput()) 
     {
     case 'c':
         system("clear");
         mess.showText("Name?");
-        choice.receiveStringInput();
-        buffer1 = choice.stringInput;
+        buffer1 = choice.receiveStringInput();
         mess.showText("Password?");
-        choice.receiveStringInput();
-        buffer2 = choice.stringInput;
+        buffer2 = choice.receiveStringInput();
         accountList.createAccount(buffer1, buffer2);
         DataBase.saveDataBase(accountList);
         mess.showText("Account created! Press any button to continue");
@@ -202,11 +189,9 @@ void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase
     case 'r':
         system("clear");
         mess.showText("Name?");
-        choice.receiveStringInput();
-        buffer1 = choice.stringInput;
+        buffer1 = choice.receiveStringInput();
         mess.showText("Password?");
-        choice.receiveStringInput();
-        buffer2 = choice.stringInput;
+        buffer2 = choice.receiveStringInput();
         accountList.removeAccount(buffer1, buffer2);
         mess.showText("Account removed! Press any button to continue");
         DataBase.saveDataBase(accountList);
@@ -217,15 +202,13 @@ void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase
         system("clear");
         mess.showText("What would you like to do?\n p - change password\n n - change name\n");
         choice.receiveInput();
-        switch (choice.input)
+        switch (choice.receiveInput())
         {
         case 'p':
         mess.showText("Old password?");
-        choice.receiveStringInput();
-        buffer1 = choice.stringInput;
+        buffer1 = choice.receiveStringInput();
         mess.showText("New password?");
-        choice.receiveStringInput();
-        buffer2 = choice.stringInput;
+        buffer2 = choice.receiveStringInput();
         accountList.editAccount(buffer1, buffer2);
         mess.showText("Edit successful. Press any button to continue");
         DataBase.saveDataBase(accountList);
@@ -234,11 +217,9 @@ void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase
         break;
         case 'n':
         mess.showText("Old name?");
-        choice.receiveStringInput();
-        buffer1 = choice.stringInput;
+        buffer1 = choice.receiveStringInput();
         mess.showText("New name?");
-        choice.receiveStringInput();
-        buffer2 = choice.stringInput;
+        buffer2 = choice.receiveStringInput();
         accountList.editAccount(buffer1, buffer2);
         mess.showText("Edit successful. Press any button to continue");
         DataBase.saveDataBase(accountList);
@@ -250,11 +231,9 @@ void Menu::switchAccountMenu(AccountList &accountList, AccountDataBase &DataBase
     case 'd':
         system("clear");
         mess.showText("Name?");
-        choice.receiveStringInput();
-        buffer1 = choice.stringInput;
+        buffer1 = choice.receiveStringInput();
         mess.showText("Password?");
-        choice.receiveStringInput();
-        buffer2 = choice.stringInput;
+        buffer2 = choice.receiveStringInput();
         accountList.displayCardNumber(buffer1, buffer2);
         cin.get();
         cin.get();
