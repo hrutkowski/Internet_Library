@@ -35,13 +35,13 @@ void BookTXT::update(const std::string& file_path, BookList &books)
 {
     std::ofstream file(file_path, fstream::out);
     BookIt iter;
-
+  
     if (file.is_open())
     {
-        for(BookIt iter=books.listGet().begin(); iter != books.listGet().end(); iter++)
+        for(auto &iter : books.listGet())
         {
-            file << (*iter).author() << " " << (*iter).title() << " " << (*iter).isTaken() << endl;
+            file << iter.author() << " " << iter.title() << " " << iter.isTaken() << endl;
         }
-    }    
+    }
 };
 
