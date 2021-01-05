@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 BookList BookTXT::load(const std::string& file_path)
 {
     BookList book_list;
@@ -35,14 +34,14 @@ BookList BookTXT::load(const std::string& file_path)
 void BookTXT::update(const std::string& file_path, BookList &books)
 {
     std::ofstream file(file_path, fstream::out);
-    list<Book>::const_iterator iter;
-
+    BookIt iter;
+  
     if (file.is_open())
     {
-        for(list<Book>::const_iterator iter=books.listGet().begin(); iter != books.listGet().end(); iter++)
+        for(auto &iter : books.listGet())
         {
-            file << (*iter).author() << " " << (*iter).title() << " " << (*iter).isTaken() << endl;
+            file << iter.author() << " " << iter.title() << " " << iter.isTaken() << endl;
         }
-    }    
+    }
 };
 
