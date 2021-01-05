@@ -8,9 +8,36 @@ CONFIG -= app_bundle
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        src/account.cpp \
+        src/accountdatabase.cpp \
+        src/accountlist.cpp \
+        src/book.cpp \
+        src/booklist.cpp \
+        src/booktxt.cpp \
+        src/main.cpp \
+        src/menu.cpp \
+        src/messenger.cpp \
+        src/userInput.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    src/AccountDataBase.txt \
+    src/a.exe \
+    src/library.txt \
+    src/main.exe
+
+HEADERS += \
+    src/account.hpp \
+    src/accountdatabase.hpp \
+    src/accountlist.hpp \
+    src/book.hpp \
+    src/booklist.hpp \
+    src/booktxt.hpp \
+    src/menu.hpp \
+    src/messenger.hpp \
+    src/userInput.hpp
