@@ -7,8 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->pushButtonLogIn, SIGNAL(clicked(bool)), this, NULL);                  // Do uzupełnienia co robi zamiast NULL
-    connect(ui->pushButtonCreateNewAccount, SIGNAL(clicked(bool)), this, NULL);       // Do uzupełnienia co robi zamiast NULL
+    connect(ui->pushButtonLogIn, SIGNAL(clicked(bool)), this, SLOT(onButtonClicked()));                  // Do zmiany
+    connect(ui->pushButtonCreateNewAccount, SIGNAL(clicked(bool)), this, SLOT(onButtonClicked()));       // Do zmiany
 }
 
 MainWindow::~MainWindow()
@@ -18,5 +18,5 @@ MainWindow::~MainWindow()
 
 void MainWindow::onButtonClicked()
 {
-    // Do uzupełnienia potem
+    ui->label_6->setText(tr("It is working"));   //Do zmiany
 }
