@@ -15,7 +15,6 @@ SOURCES += \
         src/booktxt.cpp \
         src/main.cpp \
         src/menu.cpp \
-        src/messenger.cpp \
         src/userInput.cpp \
         src/mainwindow.cpp
 
@@ -33,7 +32,6 @@ HEADERS += \
     src/booklist.hpp \
     src/booktxt.hpp \
     src/menu.hpp \
-    src/messenger.hpp \
     src/userInput.hpp \
     src/mainwindow.h
 

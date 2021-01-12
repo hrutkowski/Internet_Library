@@ -16,8 +16,8 @@ public:
     ~MainWindow();
 
 public slots:
-    void onButtonClicked();
-
+    void registerButtonClicked();
+    void loginButtonClicked();
 
 private:
     Ui::MainWindow *ui;

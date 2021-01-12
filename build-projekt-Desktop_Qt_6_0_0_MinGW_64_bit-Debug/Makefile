@@ -184,6 +184,7 @@ Makefile: ../projekt/projekt.pro ../../../../Qt/6.0.0/mingw81_64/mkspecs/win32-g
 		../../../../Qt/6.0.0/mingw81_64/mkspecs/features/resources.prf \
 		../../../../Qt/6.0.0/mingw81_64/mkspecs/features/moc.prf \
 		../../../../Qt/6.0.0/mingw81_64/mkspecs/features/win32/opengl.prf \
+		../../../../Qt/6.0.0/mingw81_64/mkspecs/features/uic.prf \
 		../../../../Qt/6.0.0/mingw81_64/mkspecs/features/qmake_use.prf \
 		../../../../Qt/6.0.0/mingw81_64/mkspecs/features/file_copies.prf \
 		../../../../Qt/6.0.0/mingw81_64/mkspecs/features/testcase_targets.prf \
@@ -307,6 +308,7 @@ Makefile: ../projekt/projekt.pro ../../../../Qt/6.0.0/mingw81_64/mkspecs/win32-g
 ../../../../Qt/6.0.0/mingw81_64/mkspecs/features/resources.prf:
 ../../../../Qt/6.0.0/mingw81_64/mkspecs/features/moc.prf:
 ../../../../Qt/6.0.0/mingw81_64/mkspecs/features/win32/opengl.prf:
+../../../../Qt/6.0.0/mingw81_64/mkspecs/features/uic.prf:
 ../../../../Qt/6.0.0/mingw81_64/mkspecs/features/qmake_use.prf:
 ../../../../Qt/6.0.0/mingw81_64/mkspecs/features/file_copies.prf:
 ../../../../Qt/6.0.0/mingw81_64/mkspecs/features/testcase_targets.prf:

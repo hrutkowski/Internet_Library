@@ -20,3 +20,4 @@ void MainWindow::onButtonClicked()
 {
     ui->label_6->setText(tr("It is working"));   //Do zmiany
 }
+
