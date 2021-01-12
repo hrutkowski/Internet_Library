@@ -1,7 +1,6 @@
-QT -= gui
-
+QT += core gui
+QT += widgets
 CONFIG += c++11 console
-CONFIG -= app_bundle
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -17,7 +16,8 @@ SOURCES += \
         src/main.cpp \
         src/menu.cpp \
         src/messenger.cpp \
-        src/userInput.cpp
+        src/userInput.cpp \
+        src/mainwindow.cpp
 
 DISTFILES += \
     src/AccountDataBase.txt \
@@ -34,9 +34,13 @@ HEADERS += \
     src/booktxt.hpp \
     src/menu.hpp \
     src/messenger.hpp \
-    src/userInput.hpp
+    src/userInput.hpp \
+    src/mainwindow.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+FORMS += \
+    src/mainwindow.ui
