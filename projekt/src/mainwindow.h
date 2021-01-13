@@ -19,6 +19,9 @@ public slots:
     void registerButtonClicked();
     void loginButtonClicked();
 
+private slots:
+    void on_pushButtonCreateNewAccount_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
