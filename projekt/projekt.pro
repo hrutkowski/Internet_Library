@@ -41,4 +41,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 FORMS += \
-    src/mainwindow.ui
+    src/mainwindow.ui \
+    src/register.ui
