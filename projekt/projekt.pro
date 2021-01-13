@@ -15,6 +15,7 @@ SOURCES += \
         src/booktxt.cpp \
         src/main.cpp \
         src/menu.cpp \
+        src/registrationwindow.cpp \
         src/userInput.cpp \
         src/mainwindow.cpp
 
@@ -32,6 +33,7 @@ HEADERS += \
     src/booklist.hpp \
     src/booktxt.hpp \
     src/menu.hpp \
+    src/registrationwindow.h \
     src/userInput.hpp \
     src/mainwindow.h
 
@@ -42,4 +44,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 FORMS += \
     src/mainwindow.ui \
-    src/register.ui
+    src/registrationwindow.ui
