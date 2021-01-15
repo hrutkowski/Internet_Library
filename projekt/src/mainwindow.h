@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#pragma once
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -20,7 +21,7 @@ public slots:
     void loginButtonClicked();
 
 private slots:
-    void on_pushButtonCreateNewAccount_clicked();
+
 
 private:
     Ui::MainWindow *ui;

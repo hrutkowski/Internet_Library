@@ -19,12 +19,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginButtonClicked()
 {
-    ui->label_6->setText(tr("this is the login button"));   //Do zmiany
+    ui->label_6->setText(tr("this is the login button"));
+    QString text = ui->textEdit->toPlainText();
+    std::string login = text.toStdString();
 }
 
-void MainWindow::on_pushButtonCreateNewAccount_clicked()
+void MainWindow::registerButtonClicked()
 {
- registrationwindow registrationWindow;
- registrationWindow.setModal(true);
- registrationWindow.exec();
+    ui->textEdit->toPlainText();
+    registrationwindow registrationWindow;
+    registrationWindow.setModal(true);
+    registrationWindow.exec();
 }

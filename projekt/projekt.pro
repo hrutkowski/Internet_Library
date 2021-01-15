@@ -16,7 +16,6 @@ SOURCES += \
         src/main.cpp \
         src/menu.cpp \
         src/registrationwindow.cpp \
-        src/userInput.cpp \
         src/mainwindow.cpp
 
 DISTFILES += \
@@ -34,7 +33,6 @@ HEADERS += \
     src/booktxt.hpp \
     src/menu.hpp \
     src/registrationwindow.h \
-    src/userInput.hpp \
     src/mainwindow.h
 
 # Default rules for deployment.
