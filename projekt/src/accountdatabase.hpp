@@ -1,9 +1,11 @@
-#pragma once
+#ifndef ACCOUNTDATABASE__HPP
+#define ACCOUNTDATABASE__HPP
+
 #include <iostream>
 #include <cstring>
 #include <fstream>
 #include <sstream>
-#include "accountlist.cpp"
+#include "accountlist.hpp"
 
 struct AccountDataBase
 {
@@ -13,3 +15,6 @@ struct AccountDataBase
     ifstream inFile;
     ofstream outFile;
 };
+
+#endif
+

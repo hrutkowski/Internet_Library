@@ -1,9 +1,8 @@
-#pragma once
+#ifndef MENU__HPP
+#define MENU__HPP
+
 #include <iostream>
-#include "accountlist.cpp"
-#include "accountdatabase.cpp"
-#include "booklist.cpp"
-#include "booktxt.cpp"
+
 
 using namespace std;
 
@@ -12,3 +11,5 @@ class Menu
 public:
     Menu();
 };
+
+#endif

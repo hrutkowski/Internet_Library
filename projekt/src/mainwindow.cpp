@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "mainwindow.hpp"
 #include "ui_mainwindow.h"
 #include "registrationwindow.h"
 
@@ -10,7 +10,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->pushButtonLogIn, SIGNAL(clicked(bool)), this, SLOT(loginButtonClicked()));                  // Do zmiany
     connect(ui->pushButtonCreateNewAccount, SIGNAL(clicked(bool)), this, SLOT(registerButtonClicked()));       // Do zmiany
+
 }
+
 
 MainWindow::~MainWindow()
 {

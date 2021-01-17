@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include "accountlist.hpp"
-#include "account.cpp"
+
 
 using namespace std;
 

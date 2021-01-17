@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BOOKLIST__HPP
+#define BOOKLIST__HPP
+
 #include <iostream>
 #include <list>
 #include <vector>
@@ -23,3 +25,5 @@ public:
     void add(const Book&);
     list<Book>& listGet();
 };
+
+#endif

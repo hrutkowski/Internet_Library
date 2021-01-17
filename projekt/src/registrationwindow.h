@@ -1,5 +1,5 @@
-#ifndef REGISTRATIONWINDOW_H
-#define REGISTRATIONWINDOW_H
+#ifndef REGISTRATIONWINDOW__H
+#define REGISTRATIONWINDOW__H
 
 #include <QDialog>
 
@@ -22,4 +22,4 @@ private:
     Ui::registrationwindow *ui;
 };
 
-#endif // REGISTRATIONWINDOW_H
+#endif

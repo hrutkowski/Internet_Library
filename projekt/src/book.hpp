@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BOOK__HPP
+#define BOOK__HPP
+
 #include <iostream>
 
 using namespace std;
@@ -19,3 +21,5 @@ public:
     void retr();
 
 };
+
+#endif

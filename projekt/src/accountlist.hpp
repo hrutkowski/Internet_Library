@@ -1,7 +1,9 @@
-#pragma once
+#ifndef ACCOUNTLIST__HPP
+#define ACCOUNTLIST__HPP
+
 #include <iostream>
 #include <cstring>
-#include "account.cpp"
+#include "account.hpp"
 
 using namespace std;
 
@@ -16,3 +18,5 @@ struct AccountList
     void displayAccounts();
     void displayCardNumber(string name, string password);
 };
+
+#endif

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ACCOUNT__HPP
+#define ACCOUNT__HPP
+
 #include <iostream>
 #include <cstring>
 #include <vector>
@@ -22,3 +24,5 @@ public:
     void setName(string newName);
     void setPassword(string newPassword);
 };
+
+#endif
