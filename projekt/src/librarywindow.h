@@ -15,6 +15,9 @@ public:
     explicit LibraryWindow(QWidget *parent = nullptr);
     ~LibraryWindow();
 
+private slots:
+    void on_pushButtonReserve_clicked();
+
 private:
     Ui::LibraryWindow *ui;
 };
