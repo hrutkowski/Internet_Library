@@ -7,6 +7,7 @@ CONFIG += c++11 console
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        librarywindow.cpp \
         src/account.cpp \
         src/accountdatabase.cpp \
         src/accountlist.cpp \
@@ -25,6 +26,7 @@ DISTFILES += \
     src/main.exe
 
 HEADERS += \
+    librarywindow.h \
     src/account.hpp \
     src/accountdatabase.hpp \
     src/accountlist.hpp \
@@ -41,5 +43,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 FORMS += \
+    librarywindow.ui \
     src/mainwindow.ui \
     src/registrationwindow.ui
