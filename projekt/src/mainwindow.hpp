@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "menu.hpp"
-
+#include "librarywindow.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,6 +24,8 @@ public slots:
 
 private slots:
 
+
+    void on_pushButtonLogIn_clicked();
 
 private:
     Ui::MainWindow *ui;

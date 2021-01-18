@@ -1,4 +1,4 @@
-#include "librarywindow.h"
+#include "librarywindow.hpp"
 #include "ui_librarywindow.h"
 
 LibraryWindow::LibraryWindow(QWidget *parent) :

@@ -1,6 +1,6 @@
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
-#include "registrationwindow.h"
+#include "registrationwindow.hpp"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -22,8 +22,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginButtonClicked()
 {
-    ui->label_6->setText(tr("this is the login button"));
     mainMenu.accountList.displayAccounts();
+
+    this->hide();
+    LibraryWindow libraryWindow;
+    libraryWindow.setModal(true);
+    libraryWindow.exec();
 }
 
 void MainWindow::registerButtonClicked()

@@ -1,4 +1,4 @@
-#include "registrationwindow.h"
+#include "registrationwindow.hpp"
 #include "ui_registrationwindow.h"
 
 registrationwindow::registrationwindow(QWidget *parent) :

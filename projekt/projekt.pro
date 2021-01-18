@@ -32,10 +32,10 @@ HEADERS += \
     src/book.hpp \
     src/booklist.hpp \
     src/booktxt.hpp \
-    src/librarywindow.h \
+    src/librarywindow.hpp \
     src/mainwindow.hpp \
     src/menu.hpp \
-    src/registrationwindow.h
+    src/registrationwindow.hpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
