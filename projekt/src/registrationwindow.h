@@ -2,6 +2,7 @@
 #define REGISTRATIONWINDOW__H
 
 #include <QDialog>
+#include "menu.hpp"
 
 namespace Ui {
 class registrationwindow;

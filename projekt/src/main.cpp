@@ -1,5 +1,6 @@
 #include <iostream>
 #include "mainwindow.hpp"
+#include "menu.hpp"
 
 #include <QApplication>
 

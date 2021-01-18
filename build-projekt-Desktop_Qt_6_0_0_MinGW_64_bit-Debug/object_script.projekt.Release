@@ -1,0 +1,12 @@
+release/account.o
+release/accountdatabase.o
+release/accountlist.o
+release/book.o
+release/booklist.o
+release/booktxt.o
+release/main.o
+release/menu.o
+release/registrationwindow.o
+release/mainwindow.o
+release/moc_mainwindow.o
+release/moc_registrationwindow.o

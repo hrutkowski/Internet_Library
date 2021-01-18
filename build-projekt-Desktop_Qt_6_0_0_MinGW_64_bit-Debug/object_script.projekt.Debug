@@ -1,0 +1,12 @@
+debug/account.o
+debug/accountdatabase.o
+debug/accountlist.o
+debug/book.o
+debug/booklist.o
+debug/booktxt.o
+debug/main.o
+debug/menu.o
+debug/registrationwindow.o
+debug/mainwindow.o
+debug/moc_mainwindow.o
+debug/moc_registrationwindow.o

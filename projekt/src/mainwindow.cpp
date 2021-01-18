@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "registrationwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -24,11 +25,14 @@ void MainWindow::loginButtonClicked()
     ui->label_6->setText(tr("this is the login button"));
     QString text = ui->textEdit->toPlainText();
     std::string login = text.toStdString();
+    text = ui->textEdit_2->toPlainText();
+    std::string password = text.toStdString();
+    mainMenu.accountList.createAccount(login,password);
+    mainMenu.DataBase.saveDataBase(mainMenu.accountList);
 }
 
 void MainWindow::registerButtonClicked()
 {
-    ui->textEdit->toPlainText();
     registrationwindow registrationWindow;
     registrationWindow.setModal(true);
     registrationWindow.exec();
