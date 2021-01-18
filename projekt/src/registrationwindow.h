@@ -14,10 +14,12 @@ class registrationwindow : public QDialog
 
 public:
     explicit registrationwindow(QWidget *parent = nullptr);
+    explicit registrationwindow(Menu &passedMenu, QWidget *parent = nullptr);
     ~registrationwindow();
 
 private slots:
     void on_pushButtonCreateNewAccount_clicked();
+    void on_pushButtonCreateNewAccount_clicked(Menu &passedMenu);
 
 private:
     Ui::registrationwindow *ui;

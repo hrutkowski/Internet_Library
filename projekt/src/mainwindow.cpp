@@ -23,17 +23,12 @@ MainWindow::~MainWindow()
 void MainWindow::loginButtonClicked()
 {
     ui->label_6->setText(tr("this is the login button"));
-    QString text = ui->textEdit->toPlainText();
-    std::string login = text.toStdString();
-    text = ui->textEdit_2->toPlainText();
-    std::string password = text.toStdString();
-    mainMenu.accountList.createAccount(login,password);
-    mainMenu.DataBase.saveDataBase(mainMenu.accountList);
+    mainMenu.accountList.displayAccounts();
 }
 
 void MainWindow::registerButtonClicked()
 {
-    registrationwindow registrationWindow;
+    registrationwindow registrationWindow(mainMenu);
     registrationWindow.setModal(true);
     registrationWindow.exec();
 }
