@@ -75,3 +75,15 @@ void AccountList::displayCardNumber(string name, string password)
     };
   
 };
+
+bool AccountList::loginAccount(string name, string password)
+{
+    for (int i=0; i<accountList.size(); i++)
+    {
+        if (accountList[i].getName() == name && accountList[i].getPassword() == password)
+        {
+            return true;
+        };
+    };
+
+}

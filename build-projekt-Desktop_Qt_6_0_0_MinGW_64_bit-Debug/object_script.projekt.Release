@@ -4,9 +4,11 @@ release/accountlist.o
 release/book.o
 release/booklist.o
 release/booktxt.o
+release/librarywindow.o
 release/main.o
 release/menu.o
 release/registrationwindow.o
 release/mainwindow.o
+release/moc_librarywindow.o
 release/moc_mainwindow.o
 release/moc_registrationwindow.o

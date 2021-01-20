@@ -22,12 +22,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginButtonClicked()
 {
+    mainMenu.DataBase.loadDatabase(mainMenu.accountList);
     mainMenu.accountList.displayAccounts();
-
-    this->hide();
+    QString text = ui->textEdit->toPlainText();
+    std::string login = text.toStdString();
+    text = ui->textEdit_2->toPlainText();
+    std::string password = text.toStdString();
+    if (mainMenu.accountList.loginAccount(login, password))
+    {
     LibraryWindow libraryWindow;
     libraryWindow.setModal(true);
     libraryWindow.exec();
+
+    }
+    else ui->label_6->setText(tr("Login failed!"));
 }
 
 void MainWindow::registerButtonClicked()
@@ -35,4 +43,5 @@ void MainWindow::registerButtonClicked()
     registrationwindow registrationWindow(mainMenu);
     registrationWindow.setModal(true);
     registrationWindow.exec();
+
 }

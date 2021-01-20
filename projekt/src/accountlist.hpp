@@ -17,6 +17,7 @@ struct AccountList
     void editAccount(string old, string change);
     void displayAccounts();
     void displayCardNumber(string name, string password);
+    bool loginAccount(string name, string password);
 };
 
 #endif

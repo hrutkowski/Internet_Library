@@ -12,7 +12,7 @@ AccountDataBase::AccountDataBase()
 
 void AccountDataBase::saveDataBase(AccountList &List)
 {
-    outFile.open("AccountDataBase.txt");
+     outFile.open( "AccountDataBase.txt", ios::out | ios::trunc );
     
     for (int i=0; i < List.accountList.size(); i++)
     {

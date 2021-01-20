@@ -13,6 +13,7 @@ class Menu
 {
 public:
     Menu();
+    Menu(Menu &passedMenu);
     AccountList accountList;
     BookList Books;
     BookTXT FileWorker;

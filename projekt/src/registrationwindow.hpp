@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "menu.hpp"
+#include "mainwindow.hpp"
 
 namespace Ui {
 class registrationwindow;
@@ -15,11 +16,11 @@ class registrationwindow : public QDialog
 public:
     explicit registrationwindow(QWidget *parent = nullptr);
     explicit registrationwindow(Menu &passedMenu, QWidget *parent = nullptr);
+    Menu currentMenu;
     ~registrationwindow();
 
 private slots:
     void on_pushButtonCreateNewAccount_clicked();
-    void on_pushButtonCreateNewAccount_clicked(Menu &passedMenu);
 
 private:
     Ui::registrationwindow *ui;
