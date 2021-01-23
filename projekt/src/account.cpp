@@ -8,7 +8,6 @@ using namespace std;
 
 Account::Account()
 {
-    isAdmin = false;
 };
 
 Account::Account(string newname, string newpassword)
@@ -19,24 +18,6 @@ Account::Account(string newname, string newpassword)
     {
         auto x = rand()%10;
         cardnumber.push_back(x);
-    };
-    isAdmin = false;
-};
-
-Account::Account(string newname, string newpassword, string newkey)
-{
-    name = newname;
-    password = newpassword;
-    for (int i=0; i<10; i++)
-    {
-        auto x = rand()%10;
-        cardnumber.push_back(x);
-    };
-    if (newkey == "iamadmin") isAdmin = true;
-    else 
-    {
-        isAdmin = false;
-        cout << "Wrong key!" << endl;
     };
 };
 

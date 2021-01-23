@@ -22,7 +22,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginButtonClicked()
 {
-    mainMenu.accountList.displayAccounts();
     QString text = ui->textEdit->toPlainText();
     std::string login = text.toStdString();
     text = ui->textEdit_2->toPlainText();
