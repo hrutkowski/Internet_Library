@@ -10,10 +10,13 @@ SOURCES += \
         src/account.cpp \
         src/accountdatabase.cpp \
         src/accountlist.cpp \
+        src/accountloader.cpp \
         src/book.cpp \
         src/booklist.cpp \
+        src/bookloader.cpp \
         src/booktxt.cpp \
         src/librarywindow.cpp \
+        src/loader.cpp \
         src/main.cpp \
         src/menu.cpp \
         src/registrationwindow.cpp \
@@ -29,10 +32,13 @@ HEADERS += \
     src/account.hpp \
     src/accountdatabase.hpp \
     src/accountlist.hpp \
+    src/accountloader.h \
     src/book.hpp \
     src/booklist.hpp \
+    src/bookloader.hpp \
     src/booktxt.hpp \
     src/librarywindow.hpp \
+    src/loader.hpp \
     src/mainwindow.hpp \
     src/menu.hpp \
     src/registrationwindow.hpp
