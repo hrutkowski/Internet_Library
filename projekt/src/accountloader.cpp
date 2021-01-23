@@ -39,11 +39,7 @@ void accountloader::loadDataBase(std::string filepath)
         {
             istringstream iss(line);
             if (!(iss >> name >> password)) {break;}
-            for (int i=0; i < AccList->accountList.size(); i++)
-            {
-                if (name != AccList->accountList[i].getName() && password !=  AccList->accountList[i].getPassword())
                 AccList->createAccount(name, password);
-            }
         }
     }
     inFile.close();
