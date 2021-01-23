@@ -11,7 +11,6 @@ private:
     string name;
     string password;
     vector<int> cardnumber;
-    bool isAdmin;
 public:
     Account();
     Account(string name, string password);
