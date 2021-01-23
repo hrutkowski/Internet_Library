@@ -11,10 +11,11 @@ registrationwindow::registrationwindow(QWidget *parent) :
 }
 
 registrationwindow::registrationwindow(Menu &passedMenu, QWidget *parent) :
-    QDialog(parent), currentMenu(passedMenu),
+    QDialog(parent),
     ui(new Ui::registrationwindow)
 {
     ui->setupUi(this);
+    currentMenu = &passedMenu;
 
     connect(ui->pushButtonCreateNewAccount, SIGNAL(clicked(bool)), this, SLOT(on_pushButtonCreateNewAccount_clicked()));
 }
@@ -30,8 +31,7 @@ void registrationwindow::on_pushButtonCreateNewAccount_clicked()
     std::string login = text.toStdString();
     text = ui->textEdit_2->toPlainText();
     std::string password = text.toStdString();
-    currentMenu.accountList.createAccount(login,password);
-    currentMenu.DataBase.saveDataBase(currentMenu.accountList);
+    currentMenu->accountList.createAccount(login,password);
     ui->label_6->setText(tr("Account created!"));
 }
 

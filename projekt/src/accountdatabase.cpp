@@ -12,7 +12,7 @@ AccountDataBase::AccountDataBase()
 
 void AccountDataBase::saveDataBase(AccountList &List)
 {
-     outFile.open( "AccountDataBase.txt", ios::out | ios::trunc );
+     outFile.open( "AccountDataBase.txt");
     
     for (int i=0; i < List.accountList.size(); i++)
     {
@@ -31,8 +31,12 @@ void AccountDataBase::loadDatabase(AccountList &List)
         while (getline(inFile, line))
         {
             istringstream iss(line);
-            if (!(iss >> name >> password)) { break; }
-            List.createAccount(name, password);
+            if (!(iss >> name >> password)) {break;}
+            for (int i=0; i < List.accountList.size(); i++)
+            {
+                if (name != List.accountList[i].getName() && password !=  List.accountList[i].getPassword())
+                List.createAccount(name, password);
+            }
         }
     }
     inFile.close();

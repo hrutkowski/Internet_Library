@@ -2,6 +2,7 @@
 #define LIBRARYWINDOW_H
 
 #include <QDialog>
+#include "menu.hpp"
 
 namespace Ui {
 class LibraryWindow;
@@ -13,6 +14,8 @@ class LibraryWindow : public QDialog
 
 public:
     explicit LibraryWindow(QWidget *parent = nullptr);
+    explicit LibraryWindow(Menu &passedMenu, QWidget *parent = nullptr);
+    Menu *currentMenu;
     ~LibraryWindow();
 
 private slots:

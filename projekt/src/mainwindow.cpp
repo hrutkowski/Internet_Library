@@ -22,7 +22,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginButtonClicked()
 {
-    mainMenu.DataBase.loadDatabase(mainMenu.accountList);
     mainMenu.accountList.displayAccounts();
     QString text = ui->textEdit->toPlainText();
     std::string login = text.toStdString();
@@ -30,10 +29,9 @@ void MainWindow::loginButtonClicked()
     std::string password = text.toStdString();
     if (mainMenu.accountList.loginAccount(login, password))
     {
-    LibraryWindow libraryWindow;
+    LibraryWindow libraryWindow(mainMenu);
     libraryWindow.setModal(true);
     libraryWindow.exec();
-
     }
     else ui->label_6->setText(tr("Login failed!"));
 }

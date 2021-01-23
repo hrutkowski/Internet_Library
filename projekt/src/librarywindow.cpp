@@ -10,6 +10,21 @@ LibraryWindow::LibraryWindow(QWidget *parent) :
     connect(ui->pushButtonReserve, SIGNAL(clicked(bool)), this, SLOT(on_pushButtonReserve_clicked()));
 }
 
+LibraryWindow::LibraryWindow(Menu &passedMenu, QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::LibraryWindow)
+{
+    ui->setupUi(this);
+    currentMenu=&passedMenu;
+
+    //for(/* books in booklist*/)
+    //{
+    //   add item books
+    //};
+
+    connect(ui->pushButtonReserve, SIGNAL(clicked(bool)), this, SLOT(on_pushButtonReserve_clicked()));
+}
+
 LibraryWindow::~LibraryWindow()
 {
     delete ui;

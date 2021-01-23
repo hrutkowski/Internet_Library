@@ -16,7 +16,7 @@ class registrationwindow : public QDialog
 public:
     explicit registrationwindow(QWidget *parent = nullptr);
     explicit registrationwindow(Menu &passedMenu, QWidget *parent = nullptr);
-    Menu currentMenu;
+    Menu *currentMenu;
     ~registrationwindow();
 
 private slots:
