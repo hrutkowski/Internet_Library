@@ -12,8 +12,7 @@ class loader
 {
 public:
     loader();
-    loader(BookList &bookList, AccountList &accountList);
-    virtual void loadDataBase(std::string filepath);
+    virtual void loadDataBase(std::string filepath) = 0;
     std::ifstream inFile;
     std::ofstream outFile;
     AccountList *AccList;

@@ -5,7 +5,13 @@ accountloader::accountloader()
 
 }
 
-accountloader::accountloader(AccountList &accountList)
+accountloader::accountloader(accountloader &accloader)
+{
+    AccList = accloader.AccList;
+}
+
+
+void accountloader::changeList(AccountList &accountList)
 {
     AccList = &accountList;
 }

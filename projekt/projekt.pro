@@ -13,7 +13,6 @@ SOURCES += \
         src/accountloader.cpp \
         src/book.cpp \
         src/booklist.cpp \
-        src/bookloader.cpp \
         src/booktxt.cpp \
         src/librarywindow.cpp \
         src/loader.cpp \
@@ -35,7 +34,6 @@ HEADERS += \
     src/accountloader.h \
     src/book.hpp \
     src/booklist.hpp \
-    src/bookloader.hpp \
     src/booktxt.hpp \
     src/librarywindow.hpp \
     src/loader.hpp \

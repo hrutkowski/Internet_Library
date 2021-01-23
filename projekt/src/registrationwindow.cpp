@@ -32,6 +32,7 @@ void registrationwindow::on_pushButtonCreateNewAccount_clicked()
     text = ui->textEdit_2->toPlainText();
     std::string password = text.toStdString();
     currentMenu->accountList.createAccount(login,password);
+    currentMenu->accloader.saveDataBase("AccountDataBase.txt");
     ui->label_6->setText(tr("Account created!"));
 }
 
