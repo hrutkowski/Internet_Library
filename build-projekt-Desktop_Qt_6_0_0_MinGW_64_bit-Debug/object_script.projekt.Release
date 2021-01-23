@@ -1,10 +1,9 @@
 release/account.o
-release/accountdatabase.o
 release/accountlist.o
 release/accountloader.o
 release/book.o
 release/booklist.o
-release/booktxt.o
+release/bookloader.o
 release/librarywindow.o
 release/loader.o
 release/main.o

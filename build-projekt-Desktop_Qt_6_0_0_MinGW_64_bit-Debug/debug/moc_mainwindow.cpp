@@ -75,7 +75,6 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->registerButtonClicked(); break;
         case 1: _t->loginButtonClicked(); break;
-
         default: ;
         }
     }

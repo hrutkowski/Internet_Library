@@ -8,12 +8,11 @@ CONFIG += c++11 console
 
 SOURCES += \
         src/account.cpp \
-        src/accountdatabase.cpp \
         src/accountlist.cpp \
         src/accountloader.cpp \
         src/book.cpp \
         src/booklist.cpp \
-        src/booktxt.cpp \
+        src/bookloader.cpp \
         src/librarywindow.cpp \
         src/loader.cpp \
         src/main.cpp \
@@ -29,12 +28,11 @@ DISTFILES += \
 
 HEADERS += \
     src/account.hpp \
-    src/accountdatabase.hpp \
     src/accountlist.hpp \
     src/accountloader.h \
     src/book.hpp \
     src/booklist.hpp \
-    src/booktxt.hpp \
+    src/bookloader.h \
     src/librarywindow.hpp \
     src/loader.hpp \
     src/mainwindow.hpp \

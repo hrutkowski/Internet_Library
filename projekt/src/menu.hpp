@@ -3,10 +3,9 @@
 
 #include <iostream>
 #include "account.hpp"
-#include "accountdatabase.hpp"
 #include "booklist.hpp"
-#include "booktxt.hpp"
 #include "accountloader.h"
+#include "bookloader.h"
 
 
 
@@ -16,13 +15,10 @@ class Menu
 {
 public:
     Menu();
-
     AccountList accountList;
-    BookList Books;
+    BookList bookList;
     accountloader accloader;
-
-    BookTXT FileWorker;
-    AccountDataBase DataBase;
+    bookloader bkloader;
 };
 
 #endif

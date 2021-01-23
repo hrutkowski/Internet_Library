@@ -1,10 +1,9 @@
 debug/account.o
-debug/accountdatabase.o
 debug/accountlist.o
 debug/accountloader.o
 debug/book.o
 debug/booklist.o
-debug/booktxt.o
+debug/bookloader.o
 debug/librarywindow.o
 debug/loader.o
 debug/main.o

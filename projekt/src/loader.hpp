@@ -13,10 +13,9 @@ class loader
 public:
     loader();
     virtual void loadDataBase(std::string filepath) = 0;
+    virtual void saveDataBase(std::string filepath) = 0;
     std::ifstream inFile;
     std::ofstream outFile;
-    AccountList *AccList;
-    BookList *BkList;
 };
 
 #endif // LOADER_HPP
