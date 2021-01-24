@@ -42,6 +42,9 @@
      <height>371</height>
     </rect>
    </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButtonReserve">
    <property name="geometry">
