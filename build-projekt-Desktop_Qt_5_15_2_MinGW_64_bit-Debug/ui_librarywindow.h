@@ -13,8 +13,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTextBrowser>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,7 +24,7 @@ public:
     QLabel *label;
     QPushButton *pushButtonReserve;
     QLabel *label_2;
-    QTextBrowser *textBrowser;
+    QListWidget *listWidget;
 
     void setupUi(QDialog *LibraryWindow)
     {
@@ -51,10 +51,9 @@ public:
         QFont font2;
         font2.setPointSize(11);
         label_2->setFont(font2);
-        textBrowser = new QTextBrowser(LibraryWindow);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(20, 60, 591, 361));
-        textBrowser->setFont(font1);
+        listWidget = new QListWidget(LibraryWindow);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        listWidget->setGeometry(QRect(20, 60, 581, 371));
 
         retranslateUi(LibraryWindow);
 

@@ -69,19 +69,14 @@
     <string/>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser">
+  <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>60</y>
-     <width>591</width>
-     <height>361</height>
+     <width>581</width>
+     <height>371</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
    </property>
   </widget>
  </widget>
