@@ -29,10 +29,10 @@ DISTFILES += \
 HEADERS += \
     src/account.hpp \
     src/accountlist.hpp \
-    src/accountloader.h \
+    src/accountloader.hpp \
     src/book.hpp \
     src/booklist.hpp \
-    src/bookloader.h \
+    src/bookloader.hpp \
     src/librarywindow.hpp \
     src/loader.hpp \
     src/mainwindow.hpp \

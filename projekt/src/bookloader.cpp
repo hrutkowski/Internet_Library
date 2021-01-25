@@ -1,4 +1,4 @@
-#include "bookloader.h"
+#include "bookloader.hpp"
 
 
 bookloader::bookloader()
@@ -26,7 +26,7 @@ void bookloader::loadDataBase(std::string filepath)
             istringstream iss(line);
             if (!(iss >> author >> title >> taken)) { break; }
             Book* ptr = new Book(title, author, taken);
-            cout << ptr->author() << " " << ptr->title() << " " << ptr->isTaken() << endl; //test ładowania książek
+            cout << ptr->author() << " " << ptr->title() << " " << ptr->isTaken() << endl; //test
             BkList->add(*ptr);
         }
     }

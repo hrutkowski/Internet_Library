@@ -4,3 +4,5 @@ cos cos
 cos cos
 cls cls
 cls cls
+tomek 1234
+tomek 1234

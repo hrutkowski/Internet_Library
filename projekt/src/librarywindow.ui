@@ -33,19 +33,6 @@
     <string>Library Page</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>60</y>
-     <width>601</width>
-     <height>371</height>
-    </rect>
-   </property>
-   <property name="mouseTracking">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButtonReserve">
    <property name="geometry">
     <rect>
@@ -80,6 +67,19 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>581</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>Place for list of books</string>
    </property>
   </widget>
  </widget>
