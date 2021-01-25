@@ -30,6 +30,7 @@ void MainWindow::loginButtonClicked()
     std::string password = text.toStdString();
     if (mainMenu.accountList.loginAccount(login, password))
     {
+    this->close();
     LibraryWindow libraryWindow(mainMenu);
     libraryWindow.setModal(true);
     libraryWindow.exec();
