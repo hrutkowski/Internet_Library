@@ -69,17 +69,19 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPlainTextEdit" name="plainTextEdit">
+  <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>90</y>
-     <width>581</width>
-     <height>331</height>
+     <y>60</y>
+     <width>591</width>
+     <height>361</height>
     </rect>
    </property>
-   <property name="plainText">
-    <string>Place for list of books</string>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
  </widget>

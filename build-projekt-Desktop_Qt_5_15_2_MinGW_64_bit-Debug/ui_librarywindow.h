@@ -13,8 +13,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextBrowser>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,7 +24,7 @@ public:
     QLabel *label;
     QPushButton *pushButtonReserve;
     QLabel *label_2;
-    QPlainTextEdit *plainTextEdit;
+    QTextBrowser *textBrowser;
 
     void setupUi(QDialog *LibraryWindow)
     {
@@ -51,9 +51,10 @@ public:
         QFont font2;
         font2.setPointSize(11);
         label_2->setFont(font2);
-        plainTextEdit = new QPlainTextEdit(LibraryWindow);
-        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
-        plainTextEdit->setGeometry(QRect(20, 90, 581, 331));
+        textBrowser = new QTextBrowser(LibraryWindow);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setGeometry(QRect(20, 60, 591, 361));
+        textBrowser->setFont(font1);
 
         retranslateUi(LibraryWindow);
 
@@ -66,7 +67,6 @@ public:
         label->setText(QCoreApplication::translate("LibraryWindow", "Library Page", nullptr));
         pushButtonReserve->setText(QCoreApplication::translate("LibraryWindow", "Reserve", nullptr));
         label_2->setText(QString());
-        plainTextEdit->setPlainText(QCoreApplication::translate("LibraryWindow", "Place for list of books", nullptr));
     } // retranslateUi
 
 };
