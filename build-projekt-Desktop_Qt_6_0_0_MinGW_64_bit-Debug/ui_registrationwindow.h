@@ -94,7 +94,7 @@ public:
         label_6->setText(QString());
         label->setText(QCoreApplication::translate("registrationwindow", "LOGIN:", nullptr));
         label_3->setText(QCoreApplication::translate("registrationwindow", "Registration page", nullptr));
-        label_4->setText(QCoreApplication::translate("registrationwindow", "If you create an account here, you will have acces to all of our books!", nullptr));
+        label_4->setText(QCoreApplication::translate("registrationwindow", "If you create an account here, you will have access to all of our books!", nullptr));
     } // retranslateUi
 
 };

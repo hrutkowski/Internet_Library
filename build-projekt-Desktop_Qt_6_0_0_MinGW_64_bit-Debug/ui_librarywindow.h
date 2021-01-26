@@ -13,7 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListView>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -22,9 +22,9 @@ class Ui_LibraryWindow
 {
 public:
     QLabel *label;
-    QListView *listView;
     QPushButton *pushButtonReserve;
     QLabel *label_2;
+    QListWidget *listWidget;
 
     void setupUi(QDialog *LibraryWindow)
     {
@@ -38,9 +38,6 @@ public:
         font.setPointSize(14);
         font.setBold(true);
         label->setFont(font);
-        listView = new QListView(LibraryWindow);
-        listView->setObjectName(QString::fromUtf8("listView"));
-        listView->setGeometry(QRect(10, 60, 601, 371));
         pushButtonReserve = new QPushButton(LibraryWindow);
         pushButtonReserve->setObjectName(QString::fromUtf8("pushButtonReserve"));
         pushButtonReserve->setGeometry(QRect(240, 440, 111, 41));
@@ -53,6 +50,9 @@ public:
         QFont font2;
         font2.setPointSize(11);
         label_2->setFont(font2);
+        listWidget = new QListWidget(LibraryWindow);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        listWidget->setGeometry(QRect(20, 60, 581, 371));
 
         retranslateUi(LibraryWindow);
 

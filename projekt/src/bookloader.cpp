@@ -17,10 +17,10 @@ void bookloader::loadDataBase(std::string filepath)
 
     string title, author, line;
     bool taken;
-
-
-    if (file.is_open())
+    inFile.exceptions(ifstream::failbit);
+    try
     {
+        file.open(filepath);
         while (getline(file, line))
         {
             istringstream iss(line);
@@ -29,6 +29,11 @@ void bookloader::loadDataBase(std::string filepath)
             BkList->add(*ptr);
         }
     }
+    catch(const ifstream::failure& fail)
+    {
+        std::cout << "error opening file (library)!" << endl;
+    }
+    file.close();
 }
 
 void bookloader::saveDataBase(std::string filepath)
