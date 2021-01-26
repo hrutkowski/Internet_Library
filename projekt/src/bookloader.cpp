@@ -17,7 +17,7 @@ void bookloader::loadDataBase(std::string filepath)
 
     string title, author, line;
     bool taken;
-    inFile.exceptions(ifstream::failbit);
+    file.exceptions(ifstream::failbit);
     try
     {
         file.open(filepath);

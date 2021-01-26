@@ -1,14 +1,6 @@
 #include "librarywindow.hpp"
 #include "ui_librarywindow.h"
 
-LibraryWindow::LibraryWindow(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::LibraryWindow)
-{
-    ui->setupUi(this);
-
-    connect(ui->pushButtonReserve, SIGNAL(clicked(bool)), this, SLOT(on_pushButtonReserve_clicked()));
-}
 
 LibraryWindow::LibraryWindow(Menu &passedMenu, QWidget *parent) :
     QDialog(parent),
