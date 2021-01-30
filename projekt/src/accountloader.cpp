@@ -19,18 +19,20 @@ void accountloader::changeList(AccountList &accountList)
 
 void accountloader::saveDataBase(std::string filepath)
 {
-     outFile.open(filepath);
+    std::ofstream file(filepath, fstream::out);
 
-    for (int i=0; i < AccList->accountList.size(); i++)
+    if(file.is_open())
     {
-        outFile << AccList->accountList[i].getName() << " " << AccList->accountList[i].getPassword() << endl;
+        for (int i=0; i < AccList->accountList.size(); i++)
+        {
+            file << AccList->accountList[i].getName() << " " << AccList->accountList[i].getPassword() << endl;
+        }
     }
-    outFile.close();
 };
 
 void accountloader::loadDataBase(std::string filepath)
 {
-    string line, name, password;
+   /* string line, name, password;
     inFile.exceptions(ifstream::failbit);
     try{
     inFile.open(filepath);
@@ -46,5 +48,19 @@ void accountloader::loadDataBase(std::string filepath)
         std::cout << "error opening file (AccountDataBase.txt)!" << std::endl;
     }
 
-    inFile.close();
+    inFile.close(); */
+
+    std::ifstream file(filepath);
+
+    string name, password, line;
+
+    if (file.is_open())
+    {
+        while (getline(file, line))
+        {
+            istringstream iss(line);
+            if (!(iss >> name >> password)) {break;}
+                AccList->createAccount(name, password);
+        }
+    }
 };

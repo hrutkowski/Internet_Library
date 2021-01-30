@@ -33,7 +33,6 @@ void bookloader::loadDataBase(std::string filepath)
     {
         std::cout << "error opening file (library)!" << endl;
     }
-    file.close();
 }
 
 void bookloader::saveDataBase(std::string filepath)
