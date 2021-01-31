@@ -33,6 +33,7 @@ void registrationwindow::on_pushButtonCreateNewAccount_clicked()
     std::string password = text.toStdString();
     currentMenu->accountList.createAccount(login,password);
     ui->label_6->setText(tr("Account created!"));
+    currentMenu->uniloader_account.saveDataBase("AccountDataBase.txt");
 }
 
 

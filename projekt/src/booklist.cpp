@@ -40,6 +40,8 @@ void BookList::reserve(BookIt iter)
     (*iter).take();
 }
 
+
+
 bool BookList::findReserve(string author, string title)
 {
     for(BookIt iter=books_.begin(); iter != books_.end(); iter++)
@@ -74,4 +76,12 @@ bool BookList::findReturn(string author, string title)
 list<Book>& BookList::listGet()
 {
     return books_;
+}
+
+void BookList::displayBooks()
+{
+   for(BookIt iter=books_.begin(); iter != books_.end(); iter++)
+        {
+            std::cout << (*iter).author() << " " << (*iter).title() << " " << (*iter).isTaken() << endl;
+        }
 }

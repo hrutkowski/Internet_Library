@@ -22,7 +22,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginButtonClicked()
 {
+    mainMenu.uniloader_account.loadDataBase("AccountDataBase.txt");
     mainMenu.accountList.displayAccounts();
+    mainMenu.bookList.displayBooks();
     QString text = ui->textEdit->toPlainText();
     std::string login = text.toStdString();
     text = ui->textEdit_2->toPlainText();
