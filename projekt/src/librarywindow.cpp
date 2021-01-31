@@ -11,7 +11,7 @@ LibraryWindow::LibraryWindow(Menu &passedMenu, QWidget *parent) :
     BookIt iter;
 
     ui->setupUi(this);
-    connect(ui->pushButtonReserve, SIGNAL(clicked(bool)), this, SLOT(on_pushButtonReserve_clicked()));
+    connect(ui->pushButtonReserve, SIGNAL(pressed()), this, SLOT(on_pushButtonReserve_clicked()));
 
     for(auto &iter : currentMenu->bookList.listGet())
     {
@@ -50,8 +50,10 @@ void LibraryWindow::on_pushButtonReserve_clicked()
     QVariant status = currentItem->data(Qt::UserRole);
     QVariant author = currentItem->data(Qt::ToolTipRole);
     QVariant title = currentItem->text();
+
     QString authorsearch = author.toString();
     QString titlesearch = title.toString();
+
     QString Message = "Author: " + author.toString() + "\nThe book is: " + status.toString();
 
     QMessageBox messageBox;

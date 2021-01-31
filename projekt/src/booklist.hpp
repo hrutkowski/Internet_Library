@@ -18,7 +18,6 @@ public:
     BookList() = default;
     BookItVector searchAuthor(string);
     BookItVector searchTitle(string);
-    void displayBooks();
     void reserve(BookIt);
     bool findReserve(string, string);
     void ret(BookIt);

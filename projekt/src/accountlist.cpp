@@ -16,16 +16,6 @@ void AccountList::createAccount(string name, string password)
     accountList.push_back(newAccount);
 };
 
-void AccountList::displayAccounts()
-{
-    for (int i=0; i<accountList.size(); i++)
-    {
-       cout << "Name: " << accountList[i].getName() << endl;
-       cout << "Password: " << accountList[i].getPassword() << endl;
-    };
-};
-
-
 void AccountList::displayCardNumber(string name, string password)
 {
     vector<int> cardno;

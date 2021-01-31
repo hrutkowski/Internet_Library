@@ -11,7 +11,6 @@ struct AccountList
 {
     vector<Account> accountList;
     AccountList();
-    void displayAccounts();
     void createAccount(string name, string password);
     void displayCardNumber(string name, string password);
     bool loginAccount(string name, string password);

@@ -7,7 +7,7 @@ registrationwindow::registrationwindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->pushButtonCreateNewAccount, SIGNAL(clicked(bool)), this, SLOT(on_pushButtonCreateNewAccount_clicked()));
+    connect(ui->pushButtonCreateNewAccount, SIGNAL(pressed()), this, SLOT(on_pushButtonCreateNewAccount_clicked()));
 }
 
 registrationwindow::registrationwindow(Menu &passedMenu, QWidget *parent) :
@@ -17,7 +17,7 @@ registrationwindow::registrationwindow(Menu &passedMenu, QWidget *parent) :
     ui->setupUi(this);
     currentMenu = &passedMenu;
 
-    connect(ui->pushButtonCreateNewAccount, SIGNAL(clicked(bool)), this, SLOT(on_pushButtonCreateNewAccount_clicked()));
+    connect(ui->pushButtonCreateNewAccount, SIGNAL(pressed()), this, SLOT(on_pushButtonCreateNewAccount_clicked()));
 }
 
 registrationwindow::~registrationwindow()

@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->pushButtonLogIn, SIGNAL(clicked(bool)), this, SLOT(loginButtonClicked()));
-    connect(ui->pushButtonCreateNewAccount, SIGNAL(clicked(bool)), this, SLOT(registerButtonClicked()));
+    connect(ui->pushButtonLogIn, SIGNAL(pressed()), this, SLOT(loginButtonClicked()));
+    connect(ui->pushButtonCreateNewAccount, SIGNAL(pressed()), this, SLOT(registerButtonClicked()));
 
 }
 
@@ -22,8 +22,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginButtonClicked()
 {
-    //mainMenu.accountList.displayAccounts();
-    //mainMenu.bookList.displayBooks();
     QString text = ui->textEdit->toPlainText();
     std::string login = text.toStdString();
     text = ui->textEdit_2->toPlainText();
