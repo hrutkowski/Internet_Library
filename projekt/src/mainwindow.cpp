@@ -24,6 +24,7 @@ void MainWindow::loginButtonClicked()
 {
     mainMenu.uniloader_account.loadDataBase("AccountDataBase.txt");
     mainMenu.accountList.displayAccounts();
+    mainMenu.uniloader_book.loadDataBase("library.txt");
     mainMenu.bookList.displayBooks();
     QString text = ui->textEdit->toPlainText();
     std::string login = text.toStdString();
@@ -31,7 +32,6 @@ void MainWindow::loginButtonClicked()
     std::string password = text.toStdString();
     if (mainMenu.accountList.loginAccount(login, password))
     {
-    this->close();
     LibraryWindow libraryWindow(mainMenu);
     libraryWindow.setModal(true);
     libraryWindow.exec();
