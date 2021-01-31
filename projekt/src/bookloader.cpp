@@ -1,6 +1,5 @@
 #include "bookloader.hpp"
 
-
 void bookloader::changeBookList(BookList &bookList)
 {
     BkList = &bookList;
@@ -22,7 +21,9 @@ void bookloader::loadDataBase(std::string filepath)
     {
         istringstream iss(line);
         if (!(iss >> author >> title >> taken)) { break; }
+        std::cout <<author;
         Book *ptr = new Book(title, author, taken);
+        std:cout << ptr->title();
         BkList->add(*ptr);
     }
 }

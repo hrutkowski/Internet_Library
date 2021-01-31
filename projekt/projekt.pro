@@ -38,7 +38,7 @@ HEADERS += \
     src/mainwindow.hpp \
     src/menu.hpp \
     src/registrationwindow.hpp \
-    src/uniloader.h
+    src/uniloader.hpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

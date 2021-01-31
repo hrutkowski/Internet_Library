@@ -5,11 +5,11 @@ release/book.o
 release/booklist.o
 release/bookloader.o
 release/librarywindow.o
-release/loader.o
 release/main.o
 release/menu.o
 release/registrationwindow.o
 release/mainwindow.o
+release/uniloader.o
 release/moc_librarywindow.o
 release/moc_mainwindow.o
 release/moc_registrationwindow.o

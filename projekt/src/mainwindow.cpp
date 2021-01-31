@@ -34,6 +34,7 @@ void MainWindow::loginButtonClicked()
     {
     LibraryWindow libraryWindow(mainMenu);
     libraryWindow.setModal(true);
+    this->close();
     libraryWindow.exec();
     }
     else ui->label_6->setText(tr("Login failed!"));
