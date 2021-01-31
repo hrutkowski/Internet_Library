@@ -1,16 +1,16 @@
 #include "bookloader.hpp"
 
-void bookloader::changeBookList(BookList &bookList)
+void BookLoader::changeBookList(BookList &bookList)
 {
     BkList = &bookList;
 }
 
-void bookloader::changeAccountList(AccountList &accountList)
+void BookLoader::changeAccountList(AccountList &accountList)
 {
     AccList = &accountList;
 }
 
-void bookloader::loadDataBase(std::string filepath)
+void BookLoader::loadDataBase(std::string filepath)
 {
     std::ifstream file(filepath);
 
@@ -29,7 +29,7 @@ void bookloader::loadDataBase(std::string filepath)
 }
 
 
-void bookloader::saveDataBase(std::string filepath)
+void BookLoader::saveDataBase(std::string filepath)
 {
     std::ofstream file(filepath, fstream::out);
     BookIt iter;

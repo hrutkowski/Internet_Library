@@ -1,17 +1,17 @@
 #include "accountloader.hpp"
 
-void accountloader::changeAccountList(AccountList &accountList)
+void AccountLoader::changeAccountList(AccountList &accountList)
 {
     AccList = &accountList;
 }
 
-void accountloader::changeBookList(BookList &bookList)
+void AccountLoader::changeBookList(BookList &bookList)
 {
     BkList = &bookList;
 }
 
 
-void accountloader::saveDataBase(std::string filepath)
+void AccountLoader::saveDataBase(std::string filepath)
 {
     std::ofstream file(filepath, fstream::out);
 
@@ -24,7 +24,7 @@ void accountloader::saveDataBase(std::string filepath)
     }
 };
 
-void accountloader::loadDataBase(std::string filepath)
+void AccountLoader::loadDataBase(std::string filepath)
 {
     std::ifstream file(filepath);
 

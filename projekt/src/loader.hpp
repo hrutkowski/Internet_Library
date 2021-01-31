@@ -9,7 +9,7 @@
 #include "accountlist.hpp"
 #include "booklist.hpp"
 
-class loader
+class Loader
 {
 public:
     virtual void loadDataBase(std::string filepath) = 0;
@@ -18,9 +18,9 @@ public:
     virtual void changeBookList(BookList &bookList) = 0;
     AccountList *AccList;
     BookList *BkList;
-    virtual ~loader() {};
+    virtual ~Loader() {};
 };
 
-using LoaderPTR = std::shared_ptr<loader>;
+using LoaderPTR = std::shared_ptr<Loader>;
 
 #endif // LOADER_HPP

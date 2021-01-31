@@ -5,7 +5,7 @@
 #include "loader.hpp"
 #include "booklist.hpp"
 
-class bookloader : public loader
+class BookLoader : public Loader
 {
 public:
     void changeBookList(BookList &bookList) override;
