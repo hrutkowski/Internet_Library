@@ -7,11 +7,10 @@
 class bookloader : public loader
 {
 public:
-    bookloader();
-    void changeList(BookList &bookList);
+    void changeBookList(BookList &bookList) override;
     void saveDataBase(std::string filepath) override;
     void loadDataBase(std::string filepath) override;
-    BookList *BkList;
+
 };
 
 #endif // BOOKLOADER_H

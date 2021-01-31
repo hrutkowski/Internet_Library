@@ -1,12 +1,7 @@
 #include "bookloader.hpp"
 
 
-bookloader::bookloader()
-{
-
-}
-
-void bookloader::changeList(BookList &bookList)
+void bookloader::changeBookList(BookList &bookList)
 {
     BkList = &bookList;
 }
@@ -17,23 +12,16 @@ void bookloader::loadDataBase(std::string filepath)
 
     string title, author, line;
     bool taken;
-    file.exceptions(ifstream::failbit);
-    try
+    file.open(filepath);
+    while (getline(file, line))
     {
-        file.open(filepath);
-        while (getline(file, line))
-        {
-            istringstream iss(line);
-            if (!(iss >> author >> title >> taken)) { break; }
-            Book* ptr = new Book(title, author, taken);
-            BkList->add(*ptr);
-        }
-    }
-    catch(const ifstream::failure& fail)
-    {
-        std::cout << "error opening file (library)!" << endl;
+        istringstream iss(line);
+        if (!(iss >> author >> title >> taken)) { break; }
+        Book* ptr = new Book(title, author, taken);
+        BkList->add(*ptr);
     }
 }
+
 
 void bookloader::saveDataBase(std::string filepath)
 {

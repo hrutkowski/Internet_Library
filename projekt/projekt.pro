@@ -14,11 +14,11 @@ SOURCES += \
         src/booklist.cpp \
         src/bookloader.cpp \
         src/librarywindow.cpp \
-        src/loader.cpp \
         src/main.cpp \
         src/menu.cpp \
         src/registrationwindow.cpp \
-        src/mainwindow.cpp
+        src/mainwindow.cpp \
+        src/uniloader.cpp
 
 DISTFILES += \
     src/AccountDataBase.txt \
@@ -37,7 +37,8 @@ HEADERS += \
     src/loader.hpp \
     src/mainwindow.hpp \
     src/menu.hpp \
-    src/registrationwindow.hpp
+    src/registrationwindow.hpp \
+    src/uniloader.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

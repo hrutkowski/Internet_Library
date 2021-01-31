@@ -22,7 +22,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::loginButtonClicked()
 {
-    mainMenu.bkloader.loadDataBase("library.txt");
+
     mainMenu.accountList.displayAccounts();
     QString text = ui->textEdit->toPlainText();
     std::string login = text.toStdString();

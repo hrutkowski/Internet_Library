@@ -4,8 +4,9 @@
 #include <iostream>
 #include "account.hpp"
 #include "booklist.hpp"
-#include "accountloader.hpp"
+#include "uniloader.h"
 #include "bookloader.hpp"
+#include "accountloader.hpp"
 
 
 
@@ -17,8 +18,6 @@ public:
     Menu();
     AccountList accountList;
     BookList bookList;
-    accountloader accloader;
-    bookloader bkloader;
 };
 
 #endif

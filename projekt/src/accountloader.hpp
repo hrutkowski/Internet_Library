@@ -8,12 +8,10 @@
 class accountloader : public loader
 {
 public:
-    accountloader();
-    accountloader(accountloader &accloader);
-    void changeList(AccountList &accountList);
+    void changeAccountList(AccountList &accountList) override;
     void saveDataBase(std::string filepath) override;
     void loadDataBase(std::string filepath) override;
-    AccountList *AccList;
+
 };
 
 #endif // ACCOUNTLOADER_H
