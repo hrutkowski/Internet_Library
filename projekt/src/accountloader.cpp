@@ -5,6 +5,11 @@ void accountloader::changeAccountList(AccountList &accountList)
     AccList = &accountList;
 }
 
+void accountloader::changeBookList(BookList &bookList)
+{
+    BkList = &bookList;
+}
+
 
 void accountloader::saveDataBase(std::string filepath)
 {

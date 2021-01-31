@@ -1,5 +1,10 @@
 #include "uniloader.h"
 
+UniLoader::UniLoader()
+{
+
+}
+
 UniLoader::UniLoader(LoaderPTR loader)  : loader_(loader)
 {
 

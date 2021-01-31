@@ -8,6 +8,7 @@
 class UniLoader
 {
 public:
+    UniLoader();
     UniLoader(LoaderPTR loader);
     void loadDataBase(std::string filepath);
     void saveDataBase(std::string filepath);

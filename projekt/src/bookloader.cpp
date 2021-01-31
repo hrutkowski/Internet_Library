@@ -6,6 +6,11 @@ void bookloader::changeBookList(BookList &bookList)
     BkList = &bookList;
 }
 
+void bookloader::changeAccountList(AccountList &accountList)
+{
+    AccList = &accountList;
+}
+
 void bookloader::loadDataBase(std::string filepath)
 {
     std::ifstream file(filepath);
