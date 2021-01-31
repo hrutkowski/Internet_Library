@@ -5,6 +5,11 @@ UniLoader::UniLoader()
 
 }
 
+UniLoader::UniLoader(UniLoader &uniLoader)
+{
+    loader_ = uniLoader.loader_;
+}
+
 UniLoader::UniLoader(LoaderPTR loader)  : loader_(loader)
 {
 
@@ -20,12 +25,12 @@ void UniLoader::saveDataBase(std::string filepath)
     loader_->saveDataBase(filepath);
 }
 
-void UniLoader::changeBookList(BookList bookList)
+void UniLoader::changeBookList(BookList &bookList)
 {
     loader_->changeBookList(bookList);
 }
 
-void UniLoader::changeAccountList(AccountList accountList)
+void UniLoader::changeAccountList(AccountList &accountList)
 {
     loader_->changeAccountList(accountList);
 }

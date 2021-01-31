@@ -9,12 +9,12 @@ class UniLoader
 {
 public:
     UniLoader();
+    UniLoader(UniLoader &uniLoader);
     UniLoader(LoaderPTR loader);
     void loadDataBase(std::string filepath);
     void saveDataBase(std::string filepath);
-    void changeBookList(BookList bookList);
-    void changeAccountList(AccountList accountList);
-private:
+    void changeBookList(BookList &bookList);
+    void changeAccountList(AccountList &accountList);
     LoaderPTR loader_;
 };
 

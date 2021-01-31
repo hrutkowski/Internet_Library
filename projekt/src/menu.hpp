@@ -18,8 +18,6 @@ public:
     Menu();
     AccountList accountList;
     BookList bookList;
-    UniLoader uniloader_book;
-    UniLoader uniloader_account;
 };
 
 #endif
