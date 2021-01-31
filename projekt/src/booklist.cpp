@@ -80,6 +80,7 @@ list<Book>& BookList::listGet()
 
 void BookList::displayBooks()
 {
+   std::cout << "To ja pokazuje ksiązki" << std::endl;
    for(BookIt iter=books_.begin(); iter != books_.end(); iter++)
         {
             std::cout << (*iter).author() << " " << (*iter).title() << " " << (*iter).isTaken() << endl;

@@ -13,18 +13,18 @@ void BookLoader::changeAccountList(AccountList &accountList)
 void BookLoader::loadDataBase(std::string filepath)
 {
     std::ifstream file(filepath);
-
     string title, author, line;
     bool taken;
-    file.open(filepath);
-    while (getline(file, line))
+
+    if (file.is_open())
     {
-        istringstream iss(line);
-        if (!(iss >> author >> title >> taken)) { break; }
-        std::cout <<author;
-        Book *ptr = new Book(title, author, taken);
-        std:cout << ptr->title();
-        BkList->add(*ptr);
+        while (getline(file, line))
+        {
+            istringstream iss(line);
+            if (!(iss >> author >> title >> taken)) { break; }
+            Book *ptr = new Book(title, author, taken);
+            BkList->add(*ptr);
+        }
     }
 }
 
