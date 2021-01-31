@@ -16,15 +16,15 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>220</x>
      <y>10</y>
-     <width>151</width>
+     <width>181</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>20</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -36,8 +36,8 @@
   <widget class="QPushButton" name="pushButtonReserve">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>440</y>
+     <x>130</x>
+     <y>450</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -77,6 +77,29 @@
      <width>581</width>
      <height>371</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonReturn">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>450</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Return</string>
    </property>
   </widget>
  </widget>
