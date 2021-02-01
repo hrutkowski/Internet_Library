@@ -29,24 +29,18 @@ void AccountLoader::loadDataBase(std::string filepath)
 {
     std::ifstream file(filepath);
     string name, password, line;
-    file.exceptions(ifstream::badbit);
-    try
+    if(file.is_open())
     {
-        while (getline(file, line))
-        {
-            istringstream iss(line);
-            if (!(iss >> name >> password)) {break;}
-                AccList->createAccount(name, password);
-        }
-    }
-    catch(const ifstream::failure &e)
+    while (getline(file, line))
     {
-        QMessageBox messageBox;
-        messageBox.setText("Error opening Account file!");
-        messageBox.exec();
+        istringstream iss(line);
+        if (!(iss >> name >> password)) {break;}
+            AccList->createAccount(name, password);
     }
-
-
-
-
+    }
+    else
+    {
+        throw invalid_argument("Error opening file!");
+    };
+    if (filepath != "AccountDataBase.txt") throw invalid_argument("AccountDataBase not opened!");
 };

@@ -26,6 +26,11 @@ void BookLoader::loadDataBase(std::string filepath)
             BkList->add(*ptr);
         }
     }
+    else
+    {
+        throw invalid_argument("Error opening file!");
+    };
+    if (filepath != "Library.txt") throw invalid_argument("Library.txt not opened!");
 }
 
 
