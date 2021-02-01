@@ -28,9 +28,8 @@ void BookLoader::loadDataBase(std::string filepath)
     }
     else
     {
-        throw invalid_argument("Error opening file!");
+        throw invalid_argument("Error opening library file!");
     };
-    if (filepath != "Library.txt") throw invalid_argument("Library.txt not opened!");
 }
 
 

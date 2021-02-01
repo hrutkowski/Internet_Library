@@ -40,7 +40,6 @@ void AccountLoader::loadDataBase(std::string filepath)
     }
     else
     {
-        throw invalid_argument("Error opening file!");
+        throw invalid_argument("Error opening accounts file!");
     };
-    if (filepath != "AccountDataBase.txt") throw invalid_argument("AccountDataBase not opened!");
 };
