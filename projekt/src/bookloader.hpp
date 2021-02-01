@@ -4,6 +4,7 @@
 #include "uniloader.hpp"
 #include "loader.hpp"
 #include "booklist.hpp"
+#include <QMessageBox>
 
 class BookLoader : public Loader
 {

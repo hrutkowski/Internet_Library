@@ -7,6 +7,6 @@ Mickiewicz DziadyII 0
 Mickiewicz DziadyIII 0
 Mickiewicz DziadyIV 0
 Słowacki Kordian 1
-Sienkiewicz Potop 0
-Wyspiański Wesele 1
-Reymont Chłopi 1
+Sienkiewicz Potop 1
+Wyspiański Wesele 0
+Reymont Chłopi 0

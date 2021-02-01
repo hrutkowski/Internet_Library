@@ -1,5 +1,6 @@
 #include "accountloader.hpp"
 
+
 void AccountLoader::changeAccountList(AccountList &accountList)
 {
     AccList = &accountList;
@@ -27,10 +28,9 @@ void AccountLoader::saveDataBase(std::string filepath)
 void AccountLoader::loadDataBase(std::string filepath)
 {
     std::ifstream file(filepath);
-
     string name, password, line;
-
-    if (file.is_open())
+    file.exceptions(ifstream::badbit);
+    try
     {
         while (getline(file, line))
         {
@@ -39,4 +39,14 @@ void AccountLoader::loadDataBase(std::string filepath)
                 AccList->createAccount(name, password);
         }
     }
+    catch(const ifstream::failure &e)
+    {
+        QMessageBox messageBox;
+        messageBox.setText("Error opening Account file!");
+        messageBox.exec();
+    }
+
+
+
+
 };

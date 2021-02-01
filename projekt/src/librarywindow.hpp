@@ -20,6 +20,7 @@ public:
 
 private slots:
     void on_pushButtonReserve_clicked();
+    void on_pushButtonReturn_clicked();
 
 private:
     Ui::LibraryWindow *ui;

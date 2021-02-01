@@ -4,7 +4,7 @@
 #include "uniloader.hpp"
 #include "accountlist.hpp"
 #include "loader.hpp"
-
+#include <QMessageBox>
 
 class AccountLoader : public Loader
 {

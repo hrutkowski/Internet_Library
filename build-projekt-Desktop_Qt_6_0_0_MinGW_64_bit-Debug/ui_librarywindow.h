@@ -25,6 +25,7 @@ public:
     QPushButton *pushButtonReserve;
     QLabel *label_2;
     QListWidget *listWidget;
+    QPushButton *pushButtonReturn;
 
     void setupUi(QDialog *LibraryWindow)
     {
@@ -33,14 +34,14 @@ public:
         LibraryWindow->resize(627, 539);
         label = new QLabel(LibraryWindow);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(240, 10, 151, 41));
+        label->setGeometry(QRect(220, 10, 181, 41));
         QFont font;
-        font.setPointSize(14);
+        font.setPointSize(20);
         font.setBold(true);
         label->setFont(font);
         pushButtonReserve = new QPushButton(LibraryWindow);
         pushButtonReserve->setObjectName(QString::fromUtf8("pushButtonReserve"));
-        pushButtonReserve->setGeometry(QRect(240, 440, 111, 41));
+        pushButtonReserve->setGeometry(QRect(130, 450, 111, 41));
         QFont font1;
         font1.setPointSize(12);
         pushButtonReserve->setFont(font1);
@@ -53,6 +54,13 @@ public:
         listWidget = new QListWidget(LibraryWindow);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setGeometry(QRect(20, 60, 581, 371));
+        QFont font3;
+        font3.setPointSize(14);
+        listWidget->setFont(font3);
+        pushButtonReturn = new QPushButton(LibraryWindow);
+        pushButtonReturn->setObjectName(QString::fromUtf8("pushButtonReturn"));
+        pushButtonReturn->setGeometry(QRect(370, 450, 111, 41));
+        pushButtonReturn->setFont(font1);
 
         retranslateUi(LibraryWindow);
 
@@ -65,6 +73,7 @@ public:
         label->setText(QCoreApplication::translate("LibraryWindow", "Library Page", nullptr));
         pushButtonReserve->setText(QCoreApplication::translate("LibraryWindow", "Reserve", nullptr));
         label_2->setText(QString());
+        pushButtonReturn->setText(QCoreApplication::translate("LibraryWindow", "Return", nullptr));
     } // retranslateUi
 
 };
